@@ -2,4 +2,14 @@
     <string name="app_name">SkincerinApp</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="title">title</string>
+    <string name="slider_title_1">Scan &amp; Analyze</string>
+    <string name="slider_description_1">SkinCer-in is a medium to help citizens discover tumor  in their skin</string>
+    <string name="slider_title_2">Education</string>
+    <string name="slider_description_2">To educate Indonesian citizens about the dangers of UV radiation</string>
+    <string name="slider_title_3">Are You Ready?</string>
+    <string name="slider_description_3">Let\'s Begin Our Journey</string>
+
 </resources>
