@@ -12,6 +12,7 @@ import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivityOnBoardingBinding
+import com.example.skincerinapp.login.LoginActivity
 import com.example.skincerinapp.ui.main.MainActivity
 
 class OnBoardingActivity : AppCompatActivity() {
@@ -60,13 +61,13 @@ class OnBoardingActivity : AppCompatActivity() {
             if(binding.slider.currentItem +1 < sliderAdapter.itemCount){
                 binding.slider.currentItem += 1
             }else{
-                Intent(applicationContext, MainActivity::class.java).also{
+                Intent(applicationContext, LoginActivity::class.java).also{
                     startActivity(it)
                 }
             }
         }
         binding.skipButton.setOnClickListener {
-            Intent(applicationContext, MainActivity::class.java).also{
+            Intent(applicationContext, LoginActivity::class.java).also{
                 startActivity(it)
             }
         }

@@ -11,5 +11,20 @@
     <string name="slider_description_2">To educate Indonesian citizens about the dangers of UV radiation</string>
     <string name="slider_title_3">Are You Ready?</string>
     <string name="slider_description_3">Let\'s Begin Our Journey</string>
+    <string name="title_login_page">Sign in</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="signin">Sign In</string>
+    <string name="or">or</string>
+    <string name="loginGoogle">Login via Google</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_password">Enter your Password</string>
+    <string name="have_account">Don\'t have account yet?</string>
+    <string name="sign_up_button">Sign Up</string>
+    <string name="username">username</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="enter_username">Enter your username</string>
+    <string name="confirm_your_password">Confirm Your Password</string>
+    <string name="sign_up_text">Create Your Account Now!</string>
 
 </resources>
