@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "295828966882",
+    "project_id": "skincerinapp",
+    "storage_bucket": "skincerinapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295828966882:android:a95151613637cbb8bc7dbb",
+        "android_client_info": {
+          "package_name": "com.example.skincerinapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295828966882-e7n7bla8n0u4aas3gs28ht4ljh7numia.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.skincerinapp",
+            "certificate_hash": "11048e7d05e6d2caee399f92152d16a0e63335e1"
+          }
+        },
+        {
+          "client_id": "295828966882-03kh1na3fi0kk0cvhai6fafo7amtu0if.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk2NDe2XT-paDWq1d7kGAZGPzzEfJJifw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295828966882-03kh1na3fi0kk0cvhai6fafo7amtu0if.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -26,5 +26,14 @@
     <string name="enter_username">Enter your username</string>
     <string name="confirm_your_password">Confirm Your Password</string>
     <string name="sign_up_text">Create Your Account Now!</string>
+    <string name="error_enter_email">Enter your Email first!</string>
+    <string name="error_passrword">Enter your password first</string>
+    <string name="invalid_email">Check email format</string>
+    <string name="error_confirm_password">Password do not Match!</string>
+    <string name="create_succes">Account created Successfully</string>
+    <string name="try_again">Try Again</string>
+    <string name="password_leght">Password should at least 8 character long</string>
+    <string name="welcome">Welcome to Skincer-in!</string>
+    <string name="wrong_login">Incorrect email or password!</string>
 
 </resources>
