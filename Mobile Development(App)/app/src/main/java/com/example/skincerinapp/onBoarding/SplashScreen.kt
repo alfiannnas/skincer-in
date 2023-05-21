@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.skincerinapp.R
 import com.example.skincerinapp.login.LoginActivity
+import com.example.skincerinapp.ui.main.MainActivity
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,8 +17,9 @@ class SplashScreen : AppCompatActivity() {
         supportActionBar?.hide()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this,LoginActivity::class.java)
+            val intent = Intent(this,OnBoardingActivity::class.java)
             startActivity(intent)
+            finish()
         },3000)
     }
 }

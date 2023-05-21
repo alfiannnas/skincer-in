@@ -38,6 +38,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this,getString(R.string.welcome), Toast.LENGTH_SHORT).show()
                         val intent = Intent(this,MainActivity::class.java)
                         startActivity(intent)
+                        finish()
                     }
                     else{
                         Toast.makeText(this,getString(R.string.wrong_login), Toast.LENGTH_SHORT).show()
@@ -71,7 +72,6 @@ class LoginActivity : AppCompatActivity() {
                 isValid = false
             }
             else -> {
-                // Hapus pesan error jika tidak ada kesalahan
                 binding.emailEditTextLayout.error = null
                 binding.passwordEditTextLayout.error = null
             }

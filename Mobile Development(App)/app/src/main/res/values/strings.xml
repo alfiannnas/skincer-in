@@ -35,5 +35,6 @@
     <string name="password_leght">Password should at least 8 character long</string>
     <string name="welcome">Welcome to Skincer-in!</string>
     <string name="wrong_login">Incorrect email or password!</string>
+    <string name="log_out">Log Out</string>
 
 </resources>
