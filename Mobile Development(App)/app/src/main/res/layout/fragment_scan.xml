@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.ScanFragment"
+    android:layout_margin="16dp">
+
+    <TextView
+        android:id="@+id/hello"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        android:fontFamily="@font/nunito_extrabold"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/enter_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_extrabold"
+        android:layout_marginTop="8dp"
+        android:text="@string/enter_your_photo"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/hello" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/nunito"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_photo_desc"
+        app:layout_constraintTop_toBottomOf="@+id/enter_photo" />
+
+    <ImageView
+        android:id="@+id/image_banner"
+        android:layout_width="186dp"
+        android:layout_height="186dp"
+        android:layout_marginTop="64dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/preview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/photo_button"
+        style="@style/CustomButtonStyle"
+        android:layout_width="164dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_extrabold"
+        android:text="@string/ADD_PHOTO"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_banner"
+        />
+
+    <Button
+        android:id="@+id/gallery_button"
+        style="@style/CustomButtonStyle"
+        android:layout_width="164dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/gallery"
+        android:fontFamily="@font/nunito_extrabold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/photo_button" />
+
+    <Button
+        android:layout_width="260dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/stroke_button"
+        android:backgroundTint="@color/black"
+        android:text="@string/Check"
+        android:fontFamily="@font/nunito_extrabold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

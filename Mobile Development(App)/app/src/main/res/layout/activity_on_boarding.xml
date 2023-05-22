@@ -34,6 +34,7 @@
         android:layout_marginBottom="60dp"
         android:text="@string/skip"
         android:textSize="18sp"
+        android:fontFamily="@font/nunito_extrabold"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -48,6 +49,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/skip_button"
         app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/nunito_extrabold"
         app:layout_constraintTop_toTopOf="@+id/skip_button" />
 
 

@@ -22,4 +22,11 @@
 
     <style name="Theme.SkincerinApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <color name="myActionBarColor">#FFFFFF</color>
+
+    <style name="CustomButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/blue</item>
+        <item name="cornerRadius">25dp</item>
+    </style>
+
 </resources>

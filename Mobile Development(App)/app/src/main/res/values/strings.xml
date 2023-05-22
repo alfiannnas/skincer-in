@@ -36,5 +36,38 @@
     <string name="welcome">Welcome to Skincer-in!</string>
     <string name="wrong_login">Incorrect email or password!</string>
     <string name="log_out">Log Out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello">Hello!</string>
+    <string name="enter_your_photo">Enter your photo</string>
+    <string name="enter_photo_desc">Enter your photo to determine if this is a cancer or not</string>
+    <string name="ADD_PHOTO">ADD PHOTO</string>
+    <string name="gallery">gallery</string>
+    <string name="Check">check</string>
+    <string name="wait">wait</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="photo_analyze">Your photos are being analyzed!</string>
+    <string name="healthy">healthy</string>
+    <string name="healthy_skin">Your skin is healthy!</string>
+    <string name="discover">Recognize the types of skin cancer by clicking \nthe button below!</string>
+    <string name="see">Check this</string>
+    <string name="scan_again">scan again</string>
+    <string name="result_text">This is the result of our analysis!</string>
+    <string name="result_scan">Your skin is indicated \nto have: Melanoma</string>
+    <string name="acuration">Acuration Score : 90</string>
+    <string name="patient">patient</string>
+    <string name="total_patient">3000+ \nPatients</string>
+    <string name="line">line</string>
+    <string name="danger">Danger!!!</string>
+    <string name="description">Description</string>
+    <string name="melanoma_desc">"Melanoma, the most serious type of skin cancer, develops in the cells (melanocytes) that produce melanin — the pigment that gives your skin its color. Melanoma can also form in your eyes and, rarely, inside your body, such as in your nose or throat.\n\nThe exact cause of all melanomas isn't clear, but exposure to ultraviolet (UV) radiation from sunlight or tanning lamps and beds increases your risk of developing melanoma. Limiting your exposure to UV radiation can help reduce your risk of melanoma. "</string>
+    <string name="causes">Causes</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="treatment">Treatment</string>
+    <string name="prevention">Prevention</string>
+    <string name="source">Source : skincer.com</string>
+    <string name="melanoma">melanoma</string>
+    <string name="detail_image">detail image</string>
+    <string name="back">back</string>
 
 </resources>
