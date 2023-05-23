@@ -5,21 +5,23 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.skincerinapp.R
+import com.example.skincerinapp.list.listFragment
 
 private val TAB_TITLES = arrayOf(
-    R.string.tab_text_1,
-    R.string.tab_text_2
+    R.string.scan,
+    R.string.List
 )
 
-/**
- * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the sections/tabs/pages.
- */
+
 class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
-        return PlaceholderFragment.newInstance(position + 1)
+        return when (position) {
+            0 -> ScanFragment()
+            1 -> listFragment()
+            else -> throw IllegalArgumentException("Invalid position: $position")
+        }
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
