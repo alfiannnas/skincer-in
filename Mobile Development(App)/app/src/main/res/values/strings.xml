@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SkincerinApp</string>
+    <string name="app_name">SkinCer-in!</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="next">Next</string>
@@ -69,5 +69,8 @@
     <string name="melanoma">melanoma</string>
     <string name="detail_image">detail image</string>
     <string name="back">back</string>
+    <string name="scan"><![CDATA[Scan & Analyze]]></string>
+    <string name="List">list</string>
+    <string name="scan_result">Scan Result</string>
 
 </resources>
