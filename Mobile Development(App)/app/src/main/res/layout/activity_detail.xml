@@ -28,7 +28,7 @@
         <ImageView
             android:id="@+id/detail_image"
             android:layout_width="match_parent"
-            android:layout_height="258dp"
+            android:layout_height="265dp"
             android:contentDescription="@string/detail_image"
             android:src="@drawable/onboarding1"
             app:layout_constraintStart_toStartOf="parent"
@@ -259,6 +259,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/source"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"

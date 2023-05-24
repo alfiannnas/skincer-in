@@ -4,12 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.example.skincerinapp.R
+import com.example.skincerinapp.databinding.ActivityDetailBinding
+import com.example.skincerinapp.databinding.ActivityScanResultBinding
 
 class ScanResultActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityScanResultBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scan_result)
+        binding = ActivityScanResultBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         supportActionBar?.setTitle(R.string.scan_result)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -21,4 +25,6 @@ class ScanResultActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 }

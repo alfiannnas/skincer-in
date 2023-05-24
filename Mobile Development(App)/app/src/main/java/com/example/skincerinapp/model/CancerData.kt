@@ -7,7 +7,8 @@ object CancerData {
         Cancer(
             "1",
             "Actinic keratosis",
-            200,
+            "200\n" +
+                    "Patient",
             "Dangerous",
             "Actinic keratosis is a condition in which there are rough, scaly plaques on the skin, which develop as a result of chronic sun exposure. It is most commonly found on the face, lips, ears, back of the hands, forearms, head, or neck. The condition, also known as solar keratosis, can progress slowly and generally causes no signs or symptoms other than plaques on the skin. The plaques develop over many years, and first appear commonly after the age of 40. A small percentage of lesions arising from actinic keratosis may develop into skin cancer.",
             "The main cause of actinic keratosis is excessive exposure to sunlight or ultraviolet light. In other words, solar keratosis will be more common in people who are often active in direct sunlight, as well as people who like to use tanning beds or skin blackening tools.\n",
@@ -39,12 +40,13 @@ object CancerData {
                     "4. Avoid using tanning beds. The tanning tool can emit ultraviolet rays and radiation that can damage the skin.\n" +
                     "5. Do regular skin checks if your skin is problematic so that it can be treated immediately if symptoms of solar keratosis are detected.\n",
             "source: https://yankes.kemkes.go.id/view_artikel/1953/keratosis",
-            R.drawable.aman
+            R.drawable.actinic
         ),
         Cancer(
             "2",
             "Basal Cell Carcinoma",
-            200,
+            "200\n" +
+                    "Patient",
             "Dangerous",
             "Basal Cell Carcinoma (BCC) is a malignant ne-oplasm of non-keratinized cells in the basal layer of the epidermis, which is locally invasive, aggressive, destructive, and rarely metastasizes. BCC more commonly occurs in the elderly. Exposure to ultraviolet (UV) rays is the main risk factor for BCC, so predilection is areas of the body that are exposed to UV rays, espe-cially the face, ears, and neck. This malignant tumor is characterized by slow tumor growth, rarely causes metastasis, but can cause destruc-tion of surrounding tissue. The etiopathogene-sis associated with BCC is genetic, environ-mental, and most often exposed to ultraviolet light.\n",
             "The primary cause of Basal Cell Carcinoma (BCC) is prolonged and cumulative exposure to ultraviolet (UV) radiation from sunlight or artificial sources, such as tanning beds. UV radiation damages the DNA of skin cells, particularly in the basal layer of the epidermis. This damage can lead to the development of cancerous cells and the formation of BCC tumors.\n",
@@ -78,12 +80,13 @@ object CancerData {
                     "Remember, prevention is essential, but if you notice any concerning skin changes or suspect skin cancer, consult a healthcare professional for evaluation and appropriate management.\n",
             "source: https://www.indonesianjournalofcancer.or.id/e-journal/index.php/ijoc/article/view/428\n" +
                     "https://www.mayoclinic.org/diseases-conditions/basal-cell-carcinoma/symptoms-causes/syc-20354187\n",
-            R.drawable.aman
+            R.drawable.basal_cell_carcinoma
         ),
         Cancer(
             "3",
             "Benign Keratosis / Seborrheic Keratosis",
-            200,
+            "200\n" +
+                    "Patient",
             "Dangerous",
             "A seborrheic keratosis is a common noncancerous (benign) skin growth. People tend to get more of them as they get older.Seborrheic keratoses are usually brown, black or light tan. The growths (lesions) look waxy or scaly and slightly raised. They appear gradually, usually on the face, neck, chest or back.Seborrheic keratoses are harmless and not contagious. They don't need treatment, but you may decide to have them removed if they become irritated by clothing or you don't like how they look.\n",
             "Experts don't completely understand what causes a seborrheic keratosis. This type of skin growth does tend to run in families, so there is likely an inherited tendency. If you've had one seborrheic keratosis, you're at risk of developing others.\n" +
@@ -110,12 +113,13 @@ object CancerData {
                     "3. Avoid irritants and trauma to the skin\n" +
                     "4. Maintain a healthy lifestyle\n",
             "Source: https://www.mayoclinic.org/diseases-conditions/seborrheic-keratosis/symptoms-causes/syc-20353878#:~:text=A%20seborrheic%20keratosis%20(seb%2Do,or%20scaly%20and%20slightly%20raised.",
-            R.drawable.aman
+            R.drawable.benign_keratosis
         ),
         Cancer(
             "4",
             "Dermatofibroma",
-            200,
+            "200\n" +
+                    "Patient",
             "Dangerous",
             "Dermatofibromas are harmless growths within the skin that usually have a small diameter. They can vary in color but are typically pink to light brown in light skin and dark brown or black in dark skin. They may appear more pink or darker if a person accidentally irritates them — for example, when shaving.\n" +
                     "\n" +
@@ -139,12 +143,13 @@ object CancerData {
             "Because the cause of dermatofibromas is still unknown, there’s no sure method for preventing them. Proper wound care may help reduce the risk of a dermatofibroma forming, as well as having a generally healthy immune system.\n",
             "source: - https://www.medicalnewstoday.com/articles/318870#causes-and-risk-factors\n" +
                     "- https://www.westlakedermatology.com/blog/dermatofibroma-treatment-options/ ",
-            R.drawable.aman
+            R.drawable.dermatofibroma
         ),
         Cancer(
             "5",
             "Melanocytic Nevus",
-            200,
+            "200\n" +
+                    "Patient",
             "Dangerous",
             "Moles present from birth, or that develop within the first few months after birth, are called congenital melanocytic nevi (CMN). They are fairly common and, in most cases, they do not cause health problems. However, they can carry risks. Most cases of CMN never require treatment, but there are some cases in which the moles may be removed. This is usually done to lower the risk of skin cancer or to improve appearance.\n",
             "Congenital melanocytic nevi are caused by a change in color (pigment) cells of the skin. The moles happen by chance. CMN is not passed down from the parents. There is no way to prevent your child from being born with moles.\n" +
@@ -169,12 +174,13 @@ object CancerData {
                     "Do not let your child use tanning beds.\n" +
                     "Call the doctor if you notice any changes in your child’s moles.\n",
             "Source: https://www.nationwidechildrens.org/conditions/congenital-melanocytic-nevi#:~:text=Congenital%20melanocytic%20nevi%20are%20caused,from%20being%20born%20with%20moles.",
-            R.drawable.aman
+            R.drawable.melanocytic_nevi
         ),
         Cancer(
             "6",
             "Melanoma",
-            200,
+            "200\n" +
+                    "Patient",
             "Dangerous",
             "Melanoma, the most serious type of skin cancer, develops in the cells (melanocytes) that produce melanin — the pigment that gives your skin its color. Melanoma can also form in your eyes and, rarely, inside your body, such as in your nose or throat.\n" +
                     "\n" +
@@ -202,12 +208,13 @@ object CancerData {
                     "4. Avoid tanning lamps and beds.\n" +
                     "5. Become familiar with your skin so that you'll notice changes.\n",
             "Source: https://www.mayoclinic.org/diseases-conditions/melanoma/symptoms-causes/syc-20374884#:~:text=Melanoma%2C%20the%20most%20serious%20type,in%20your%20nose%20or%20throat",
-            R.drawable.aman
+            R.drawable.melanoma
         ),
         Cancer(
             "7",
             "Squamous Cell Carcinoma(SCC)",
-            200,
+            "200\n" +
+                    "Patient",
             "Dangerous",
             "Squamous cell carcinoma of the skin is a common form of skin cancer that develops in the squamous cells that make up the middle and outer layers of the skin.\n" +
                     "Squamous cell carcinoma of the skin is usually not life-threatening, though it can be aggressive. Untreated, squamous cell carcinoma of the skin can grow large or spread to other parts of your body, causing serious complications.\n",
@@ -244,12 +251,13 @@ object CancerData {
                     "3. Avoid tanning beds\n" +
                     "4. Check your skin regularly and report changes to your doctor\n",
             "source: https://www.mayoclinic.org/diseases-conditions/squamous-cell-carcinoma/diagnosis-treatment/drc-20352486",
-            R.drawable.aman
+            R.drawable.squamous_cell_carcinoma
         ),
         Cancer(
             "8",
             "Vascular Lesion",
-            200,
+            "200\n" +
+                    "Patient",
             "Dangerous",
             "A type of tumor that forms from cells that make blood vessels or lymph vessels. Vascular tumors may be benign (not cancer) or malignant (cancer) and can occur anywhere in the body. They may form on the skin, in the tissues below the skin, and/or in an organ. There are many types of vascular tumors. The most common type of vascular tumor is hemangioma, which is a benign tumor that usually occurs in infants and goes away on its own.",
             "Vascular lesions can be caused by various factors, and the specific cause often depends on the type of lesion. But mostly,Genetic factors and certain hormones may also play a role.\n",
@@ -307,7 +315,7 @@ object CancerData {
                     "Schedule regular check-ups with your healthcare provider to monitor your overall health and detect any early signs or symptoms of vascular conditions.\n" +
                     "If you have a family history of vascular lesions or conditions, inform your healthcare provider so appropriate screenings or preventive measures can be considered.\n",
             "Source: https://lakejacksonent.com/what-are-vascular-lesions-and-how-can-they-be-treated/",
-            R.drawable.aman
+            R.drawable.vascular_lessions
         )
     )
 }

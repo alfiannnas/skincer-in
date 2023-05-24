@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.skincerinapp.R
-import com.example.skincerinapp.list.listFragment
+import com.example.skincerinapp.list.ListFragment
 
 private val TAB_TITLES = arrayOf(
     R.string.scan,
@@ -19,7 +19,7 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> ScanFragment()
-            1 -> listFragment()
+            1 -> ListFragment()
             else -> throw IllegalArgumentException("Invalid position: $position")
         }
     }

@@ -33,10 +33,10 @@ class ScanFragment : Fragment() {
     private val binding get() = _binding!!
     private var getFile: File? = null
     companion object {
-        const val CAMERA_X_RESULT = 200
         private val REQUIRED_PERMISSIONS = arrayOf(android.Manifest.permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10
     }
+    @Deprecated("Deprecated in Java")
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
@@ -164,5 +164,7 @@ class ScanFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
 
 }
