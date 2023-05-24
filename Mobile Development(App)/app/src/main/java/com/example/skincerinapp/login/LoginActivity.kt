@@ -129,6 +129,7 @@ class LoginActivity : AppCompatActivity() {
         val email = binding.emailEditText.text.toString()
         val password = binding.passwordEditText.text.toString()
         var isValid = true
+
         when {
             email.isEmpty() -> {
                 binding.emailEditTextLayout.error = getString(R.string.error_enter_email)
@@ -138,21 +139,25 @@ class LoginActivity : AppCompatActivity() {
                 binding.emailEditTextLayout.error = getString(R.string.invalid_email)
                 isValid = false
             }
+            else -> {
+                binding.emailEditTextLayout.error = null
+            }
+        }
+
+        when {
             password.isEmpty() -> {
                 binding.passwordEditTextLayout.error = getString(R.string.error_passrword)
-                binding.passwordEditTextLayout.errorIconDrawable = null
                 isValid = false
             }
-            password.length <= 7 -> {
+            password.length <= 8 -> {
                 binding.passwordEditTextLayout.error = getString(R.string.password_leght)
-                binding.passwordEditTextLayout.errorIconDrawable = null
                 isValid = false
             }
             else -> {
-                binding.emailEditTextLayout.error = null
                 binding.passwordEditTextLayout.error = null
             }
         }
+
         return isValid
     }
 

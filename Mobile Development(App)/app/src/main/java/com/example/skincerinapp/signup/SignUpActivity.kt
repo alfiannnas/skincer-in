@@ -32,7 +32,6 @@ class SignUpActivity : AppCompatActivity() {
                     if(it.isSuccessful){
                         Toast.makeText(this,getString(R.string.create_succes),Toast.LENGTH_SHORT).show()
                         finish()
-
                     }
                     else{
                         Toast.makeText(this,getString(R.string.try_again),Toast.LENGTH_SHORT).show()
@@ -48,6 +47,7 @@ class SignUpActivity : AppCompatActivity() {
         val password = binding.passwordEditText.text.toString()
         val confirmPassword = binding.confirmPasswordEditText.text.toString()
         var isValid = true
+
         when {
             email.isEmpty() -> {
                 binding.emailEditTextLayout.error = getString(R.string.error_enter_email)
@@ -57,33 +57,43 @@ class SignUpActivity : AppCompatActivity() {
                 binding.emailEditTextLayout.error = getString(R.string.invalid_email)
                 isValid = false
             }
+            else -> {
+                binding.emailEditTextLayout.error = null
+            }
+        }
+
+        when {
             password.isEmpty() -> {
                 binding.passwordEditTextLayout.error = getString(R.string.error_passrword)
-                binding.passwordEditTextLayout.errorIconDrawable = null
                 isValid = false
             }
-            password.length <= 7 -> {
+            password.length <= 8 -> {
                 binding.passwordEditTextLayout.error = getString(R.string.password_leght)
-                binding.passwordEditTextLayout.errorIconDrawable = null
-                isValid = false
-            }
-            confirmPassword.isEmpty() -> {
-                binding.confirmPasswordEditText.error = getString(R.string.error_passrword)
-                isValid = false
-            }
-            confirmPassword != password -> {
-                binding.passwordEditTextLayout.error = getString(R.string.error_confirm_password)
                 isValid = false
             }
             else -> {
-                // Hapus pesan error jika tidak ada kesalahan
-                binding.emailEditTextLayout.error = null
                 binding.passwordEditTextLayout.error = null
-                binding.confirmPasswordEditText.error = null
             }
         }
+
+        when {
+            confirmPassword.isEmpty() -> {
+                binding.confirmPassword.error = getString(R.string.error_passrword)
+                isValid = false
+            }
+            confirmPassword != password -> {
+                binding.confirmPassword.error = getString(R.string.error_confirm_password)
+                isValid = false
+            }
+            else -> {
+                binding.confirmPassword.error = null
+            }
+        }
+
         return isValid
     }
+
+
 
 
 
