@@ -72,5 +72,6 @@
     <string name="scan"><![CDATA[Scan & Analyze]]></string>
     <string name="List">list</string>
     <string name="scan_result">Scan Result</string>
+    <string name="email_already_registered">Email already registered!</string>
 
 </resources>

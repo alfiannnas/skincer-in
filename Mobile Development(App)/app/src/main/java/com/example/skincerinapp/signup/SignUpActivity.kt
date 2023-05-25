@@ -4,41 +4,45 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivitySignUpBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
 
 class SignUpActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivitySignUpBinding
+    private lateinit var viewModel: SignUpViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth = Firebase.auth
-
         supportActionBar?.hide()
+
+        viewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
 
         binding.signupButton.setOnClickListener {
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
-            if(checkForm()){
-                auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener{
-                    if(it.isSuccessful){
-                        Toast.makeText(this,getString(R.string.create_succes),Toast.LENGTH_SHORT).show()
+            if (checkForm()) {
+                viewModel.signUpWithEmailAndPassword(email, password) { isSuccess, error ->
+                    if (isSuccess) {
+                        Toast.makeText(this, getString(R.string.create_succes), Toast.LENGTH_SHORT).show()
                         finish()
-                    }
-                    else{
-                        Toast.makeText(this,getString(R.string.try_again),Toast.LENGTH_SHORT).show()
+                    } else {
+                        error?.let {
+                            if (it is FirebaseAuthUserCollisionException) {
+                                binding.emailEditTextLayout.error = getString(R.string.email_already_registered)
+                            } else {
+                                Toast.makeText(this, getString(R.string.try_again), Toast.LENGTH_SHORT).show()
+                            }
+                        }
                     }
                 }
             }
         }
-
     }
 
     private fun checkForm(): Boolean {
@@ -91,5 +95,4 @@ class SignUpActivity : AppCompatActivity() {
 
         return isValid
     }
-
 }
