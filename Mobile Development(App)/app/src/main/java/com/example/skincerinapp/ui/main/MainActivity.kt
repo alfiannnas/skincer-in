@@ -1,23 +1,24 @@
 package com.example.skincerinapp.ui.main
 
+import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.google.android.material.tabs.TabLayout
+import androidx.activity.viewModels
+import androidx.lifecycle.Observer
 import androidx.viewpager.widget.ViewPager
-import androidx.appcompat.app.AppCompatActivity
 import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivityMainBinding
 import com.example.skincerinapp.login.LoginActivity
-import com.google.firebase.auth.FirebaseAuth
+import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var auth: FirebaseAuth
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +32,7 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
 
-        auth = FirebaseAuth.getInstance()
-
-        val currentUser = auth.currentUser
+        val currentUser = viewModel.getCurrentUser()
         if (currentUser == null) {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -51,22 +50,14 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.logout -> {
-                logOut()
+                viewModel.logOut()
+                Toast.makeText(this, "Logout Successfully!", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                finish()
             }
-
         }
         return super.onOptionsItemSelected(item)
     }
-
-    private fun logOut() {
-        auth.signOut()
-
-        Toast.makeText(this, "Logout Successfully!", Toast.LENGTH_SHORT).show()
-
-        val intent = Intent(this, LoginActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        startActivity(intent)
-        finish()
-    }
-
 }
