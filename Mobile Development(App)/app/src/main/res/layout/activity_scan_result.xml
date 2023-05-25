@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_extrabold"
             android:text="@string/hello"
-            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +27,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_extrabold"
-            android:textColor="@color/black"
             android:text="@string/result_text"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"

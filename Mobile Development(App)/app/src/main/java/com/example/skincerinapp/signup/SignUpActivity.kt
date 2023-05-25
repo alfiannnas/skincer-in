@@ -1,6 +1,5 @@
 package com.example.skincerinapp.signup
 
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
@@ -92,9 +91,5 @@ class SignUpActivity : AppCompatActivity() {
 
         return isValid
     }
-
-
-
-
 
 }

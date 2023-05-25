@@ -40,7 +40,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/nunito_extrabold"
-            android:textColor="@color/black"
             android:layout_marginStart="16dp"
             android:text="@string/melanoma"
             android:textSize="24sp"

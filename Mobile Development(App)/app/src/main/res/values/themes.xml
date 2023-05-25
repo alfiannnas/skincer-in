@@ -10,6 +10,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:fontFamily"> @font/nunito_extrabold</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -28,5 +29,6 @@
         <item name="strokeColor">@color/blue</item>
         <item name="cornerRadius">25dp</item>
     </style>
+
 
 </resources>
