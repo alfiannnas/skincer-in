@@ -2,7 +2,6 @@ package com.example.skincerinapp.onBoarding
 
 import android.content.Intent
 import android.content.SharedPreferences
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -11,7 +10,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
-import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivityOnBoardingBinding
 import com.example.skincerinapp.login.LoginActivity

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.example.skincerinapp.R
-import com.example.skincerinapp.databinding.ActivityDetailBinding
 import com.example.skincerinapp.databinding.ActivityScanResultBinding
 
 class ScanResultActivity : AppCompatActivity() {

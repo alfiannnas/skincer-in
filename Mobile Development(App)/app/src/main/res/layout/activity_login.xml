@@ -19,7 +19,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal2"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/onboarding1" />
+        app:srcCompat="@drawable/onboarding1"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/titleTextView"
@@ -62,7 +63,7 @@
             android:fontFamily="@font/nunito"
             android:hint="@string/enter_your_email"
             android:inputType="textEmailAddress"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,7 +92,7 @@
             android:hint="@string/enter_your_password"
             android:inputType="textPassword"
             app:passwordToggleEnabled="true"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
@@ -156,7 +157,8 @@
         android:text="@string/signin"
         app:layout_constraintBottom_toTopOf="@+id/signupText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineHorizontal"

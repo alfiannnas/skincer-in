@@ -6,8 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.skincerinapp.R
-import com.example.skincerinapp.login.LoginActivity
-import com.example.skincerinapp.ui.main.MainActivity
+
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

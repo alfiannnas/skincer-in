@@ -1,7 +1,6 @@
 package com.example.skincerinapp.signup
 
 import androidx.lifecycle.ViewModel
-import com.example.skincerinapp.R
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUpViewModel : ViewModel() {

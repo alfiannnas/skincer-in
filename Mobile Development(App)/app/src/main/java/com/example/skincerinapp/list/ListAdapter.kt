@@ -2,12 +2,8 @@ package com.example.skincerinapp.list
 
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.CardListBinding
 import com.example.skincerinapp.model.Cancer
 

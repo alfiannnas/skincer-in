@@ -18,12 +18,12 @@
             android:layout_height="52dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="@string/back"
             android:background="@drawable/rounded_button_background"
             android:drawableLeft="@drawable/round_arrow_back_24"
+            android:text="@string/back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlHardcoded" />
+            tools:ignore="RtlHardcoded,TextSizeCheck,TextContrastCheck" />
 
         <ImageView
             android:id="@+id/detail_image"
@@ -32,7 +32,8 @@
             android:contentDescription="@string/detail_image"
             android:src="@drawable/onboarding1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
 
         <TextView
             android:id="@+id/detail_title"

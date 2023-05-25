@@ -7,13 +7,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
 import androidx.viewpager.widget.ViewPager
 import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivityMainBinding
 import com.example.skincerinapp.login.LoginActivity
 import com.google.android.material.tabs.TabLayout
-import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,11 +1,8 @@
 package com.example.skincerinapp.onBoarding
 
-import android.media.Image
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.SliderItemBinding
 
 class SliderAdapter(private val slider: List<Slider>) : RecyclerView.Adapter<SliderAdapter.SliderViewHolder>() {

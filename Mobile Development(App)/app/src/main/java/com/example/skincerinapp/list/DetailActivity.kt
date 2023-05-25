@@ -1,15 +1,10 @@
 package com.example.skincerinapp.list
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivityDetailBinding
-import com.example.skincerinapp.databinding.ActivityMainBinding
-import com.example.skincerinapp.login.LoginActivity
 import com.example.skincerinapp.model.Cancer
 import com.example.skincerinapp.model.CancerData
-import com.example.skincerinapp.ui.main.MainActivity
 
 class DetailActivity : AppCompatActivity() {
 
