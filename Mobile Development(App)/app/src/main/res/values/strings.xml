@@ -74,5 +74,6 @@
     <string name="scan_result">Scan Result</string>
     <string name="email_already_registered">Email already registered!</string>
     <string name="about">About</string>
+    <string name="enter_your_name">Enter your name</string>
 
 </resources>

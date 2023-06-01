@@ -24,17 +24,18 @@ class SignUpActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
 
         binding.signupButton.setOnClickListener {
+            val username = binding.usernameEditText.text.toString()
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
             if (checkForm()) {
-                viewModel.signUpWithEmailAndPassword(email, password) { isSuccess, error ->
+                viewModel.signUpWithEmailAndPassword(username, email, password) { isSuccess, error ->
                     if (isSuccess) {
                         Toast.makeText(this, getString(R.string.create_succes), Toast.LENGTH_SHORT).show()
                         finish()
                     } else {
                         error?.let {
-                            if (it is FirebaseAuthUserCollisionException) {
-                                binding.emailEditTextLayout.error = getString(R.string.email_already_registered)
+                            if (it.message == "User with email already exists!") {
+                                Toast.makeText(this, getString(R.string.email_already_registered), Toast.LENGTH_SHORT).show()
                             } else {
                                 Toast.makeText(this, getString(R.string.try_again), Toast.LENGTH_SHORT).show()
                             }
