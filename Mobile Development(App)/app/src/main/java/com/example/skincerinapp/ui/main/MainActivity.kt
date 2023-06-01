@@ -11,12 +11,14 @@ import androidx.viewpager.widget.ViewPager
 import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivityMainBinding
 import com.example.skincerinapp.login.LoginActivity
+import com.example.skincerinapp.signup.SignUpActivity
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         val tabs: TabLayout = binding.tabs
 
         val currentUser = viewModel.getCurrentUser()
-        if (currentUser == null) {
+        if (currentUser == null  ) {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()

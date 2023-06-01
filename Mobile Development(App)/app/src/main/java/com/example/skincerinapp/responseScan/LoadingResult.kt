@@ -1,4 +1,4 @@
-package com.example.skincerinapp.response
+package com.example.skincerinapp.responseScan
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

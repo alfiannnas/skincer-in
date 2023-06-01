@@ -73,5 +73,6 @@
     <string name="List">list</string>
     <string name="scan_result">Scan Result</string>
     <string name="email_already_registered">Email already registered!</string>
+    <string name="about">About</string>
 
 </resources>

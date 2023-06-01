@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
@@ -58,16 +59,18 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         viewModel.loginResult.observe(this) { success ->
-            if (success) {
+            if (success ) {
                 Toast.makeText(this, getString(R.string.welcome), Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
-                Toast.makeText(this, getString(R.string.wrong_login), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,  getString(R.string.wrong_login), Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 
     private fun signInGoogle() {
@@ -89,7 +92,6 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-
 
     private fun signIn() {
         val email = binding.emailEditText.text.toString()
@@ -124,7 +126,7 @@ class LoginActivity : AppCompatActivity() {
                 binding.passwordEditTextLayout.error = getString(R.string.error_passrword)
                 isValid = false
             }
-            password.length <= 8 -> {
+            password.length < 8 -> {
                 binding.passwordEditTextLayout.error = getString(R.string.password_leght)
                 isValid = false
             }
