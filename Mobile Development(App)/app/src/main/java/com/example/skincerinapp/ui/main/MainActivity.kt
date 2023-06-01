@@ -1,5 +1,6 @@
 package com.example.skincerinapp.ui.main
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
@@ -32,8 +33,10 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
 
-        val currentUser = viewModel.getCurrentUser()
-        if (currentUser == null  ) {
+        val sharedPref = getSharedPreferences("login_pref", Context.MODE_PRIVATE)
+        val isLoggedIn = sharedPref.getBoolean("isLoggedIn", false)
+
+        if (!isLoggedIn) {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()

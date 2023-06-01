@@ -8,8 +8,6 @@ class MainViewModel : ViewModel() {
 
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
-    fun getCurrentUser() = auth.currentUser
-
     fun logOut() {
         auth.signOut()
     }

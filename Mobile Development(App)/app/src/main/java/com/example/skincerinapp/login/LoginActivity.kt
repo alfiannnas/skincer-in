@@ -1,6 +1,7 @@
 package com.example.skincerinapp.login
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -62,6 +63,11 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.loginResult.observe(this) { success ->
             if (success ) {
+                val sharedPref = getSharedPreferences("login_pref", Context.MODE_PRIVATE)
+                val editor = sharedPref.edit()
+                editor.putBoolean("isLoggedIn", true)
+                editor.apply()
+
                 Toast.makeText(this, getString(R.string.welcome), Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

@@ -1,5 +1,6 @@
 package com.example.skincerinapp.login
 
+import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
@@ -25,6 +26,7 @@ class LoginViewModel : ViewModel() {
     private val _token = MutableLiveData<String>()
     val token: LiveData<String> = _token
 
+
     fun signInWithEmailAndPassword(email: String, password: String) {
         val request = LoginRequest(email, password)
         val call = apiConfig.getApiService().login(request)
@@ -35,6 +37,7 @@ class LoginViewModel : ViewModel() {
 
                     _loginResult.value = true
                     _token.value = response.body()?.token!!
+
                 } else {
                     _loginResult.value = false
                     Log.e("LoginActivity", "Login failed: ${response.code()}")
