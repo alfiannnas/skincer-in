@@ -1,16 +1,13 @@
 package com.example.skincerinapp.login
 
-import android.content.Context
-import android.content.Intent
+
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.skincerinapp.api.ApiConfig
 import com.example.skincerinapp.model.LoginRequest
 import com.example.skincerinapp.model.LoginResponse
-import com.example.skincerinapp.ui.main.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import retrofit2.Call

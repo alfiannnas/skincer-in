@@ -12,7 +12,6 @@ import androidx.viewpager.widget.ViewPager
 import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivityMainBinding
 import com.example.skincerinapp.login.LoginActivity
-import com.example.skincerinapp.signup.SignUpActivity
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
