@@ -3,6 +3,7 @@ package com.example.skincerinapp.ui.main
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -53,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.logout -> {
                 viewModel.logOut()
+                clearSharedPreferences()
                 Toast.makeText(this, "Logout Successfully!", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -61,5 +63,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun clearSharedPreferences() {
+        val sharedPref: SharedPreferences = getSharedPreferences("login_pref", Context.MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPref.edit()
+        editor.clear()
+        editor.apply()
     }
 }
