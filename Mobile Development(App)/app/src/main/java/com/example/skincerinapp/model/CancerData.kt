@@ -7,9 +7,9 @@ object CancerData {
         Cancer(
             "1",
             "Actinic keratosis",
-            "200\n" +
-                    "Patient",
-            "Dangerous",
+            ">40\n" +
+                    "Years",
+            "Not Dangerous",
             "Actinic keratosis is a condition in which there are rough, scaly plaques on the skin, which develop as a result of chronic sun exposure. It is most commonly found on the face, lips, ears, back of the hands, forearms, head, or neck. The condition, also known as solar keratosis, can progress slowly and generally causes no signs or symptoms other than plaques on the skin. The plaques develop over many years, and first appear commonly after the age of 40. A small percentage of lesions arising from actinic keratosis may develop into skin cancer.",
             "The main cause of actinic keratosis is excessive exposure to sunlight or ultraviolet light. In other words, solar keratosis will be more common in people who are often active in direct sunlight, as well as people who like to use tanning beds or skin blackening tools.\n",
             "Actinic keratosis symptoms generally appear on parts of the skin that are frequently exposed to the sun. However, not everyone who is frequently exposed to the sun will suffer from actinic keratosis.\n" +
@@ -45,9 +45,9 @@ object CancerData {
         Cancer(
             "2",
             "Basal Cell Carcinoma",
-            "200\n" +
-                    "Patient",
-            "Dangerous",
+            ">50" +
+                    "Years",
+            "Not Dangerous",
             "Basal Cell Carcinoma (BCC) is a malignant ne-oplasm of non-keratinized cells in the basal layer of the epidermis, which is locally invasive, aggressive, destructive, and rarely metastasizes. BCC more commonly occurs in the elderly. Exposure to ultraviolet (UV) rays is the main risk factor for BCC, so predilection is areas of the body that are exposed to UV rays, espe-cially the face, ears, and neck. This malignant tumor is characterized by slow tumor growth, rarely causes metastasis, but can cause destruc-tion of surrounding tissue. The etiopathogene-sis associated with BCC is genetic, environ-mental, and most often exposed to ultraviolet light.\n",
             "The primary cause of Basal Cell Carcinoma (BCC) is prolonged and cumulative exposure to ultraviolet (UV) radiation from sunlight or artificial sources, such as tanning beds. UV radiation damages the DNA of skin cells, particularly in the basal layer of the epidermis. This damage can lead to the development of cancerous cells and the formation of BCC tumors.\n",
             "BCC can vary depending on the subtype and location of the tumor. Common symptoms and characteristics of BCC include:\n" +
@@ -85,9 +85,9 @@ object CancerData {
         Cancer(
             "3",
             "Benign Keratosis / Seborrheic Keratosis",
-            "200\n" +
-                    "Patient",
-            "Dangerous",
+            "50\n" +
+                    "Years",
+            "No Dangerous",
             "A seborrheic keratosis is a common noncancerous (benign) skin growth. People tend to get more of them as they get older.Seborrheic keratoses are usually brown, black or light tan. The growths (lesions) look waxy or scaly and slightly raised. They appear gradually, usually on the face, neck, chest or back.Seborrheic keratoses are harmless and not contagious. They don't need treatment, but you may decide to have them removed if they become irritated by clothing or you don't like how they look.\n",
             "Experts don't completely understand what causes a seborrheic keratosis. This type of skin growth does tend to run in families, so there is likely an inherited tendency. If you've had one seborrheic keratosis, you're at risk of developing others.\n" +
                     "\n" +
@@ -118,9 +118,9 @@ object CancerData {
         Cancer(
             "4",
             "Dermatofibroma",
-            "200\n" +
-                    "Patient",
-            "Dangerous",
+            "20 - 40 \n"+
+                     "Years",
+            "Not Dangerous",
             "Dermatofibromas are harmless growths within the skin that usually have a small diameter. They can vary in color but are typically pink to light brown in light skin and dark brown or black in dark skin. They may appear more pink or darker if a person accidentally irritates them — for example, when shaving.\n" +
                     "\n" +
                     "As they are dense and firm to the touch, many people say that they feel like a small stone underneath or raised above the skin. Most dermatofibromas are painless, but some people experience itching, irritation, or tenderness at the site of the growth.\n",
@@ -148,9 +148,9 @@ object CancerData {
         Cancer(
             "5",
             "Melanocytic Nevus",
-            "200\n" +
-                    "Patient",
-            "Dangerous",
+            "30-40\n" +
+                    "Years",
+            "Not Dangerous",
             "Moles present from birth, or that develop within the first few months after birth, are called congenital melanocytic nevi (CMN). They are fairly common and, in most cases, they do not cause health problems. However, they can carry risks. Most cases of CMN never require treatment, but there are some cases in which the moles may be removed. This is usually done to lower the risk of skin cancer or to improve appearance.\n",
             "Congenital melanocytic nevi are caused by a change in color (pigment) cells of the skin. The moles happen by chance. CMN is not passed down from the parents. There is no way to prevent your child from being born with moles.\n" +
                     "\n" +
@@ -179,8 +179,8 @@ object CancerData {
         Cancer(
             "6",
             "Melanoma",
-            "200\n" +
-                    "Patient",
+            "<55\n" +
+                    "Years",
             "Dangerous",
             "Melanoma, the most serious type of skin cancer, develops in the cells (melanocytes) that produce melanin — the pigment that gives your skin its color. Melanoma can also form in your eyes and, rarely, inside your body, such as in your nose or throat.\n" +
                     "\n" +
@@ -213,8 +213,8 @@ object CancerData {
         Cancer(
             "7",
             "Squamous Cell Carcinoma(SCC)",
-            "200\n" +
-                    "Patient",
+            ">50\n" +
+                    "Years",
             "Dangerous",
             "Squamous cell carcinoma of the skin is a common form of skin cancer that develops in the squamous cells that make up the middle and outer layers of the skin.\n" +
                     "Squamous cell carcinoma of the skin is usually not life-threatening, though it can be aggressive. Untreated, squamous cell carcinoma of the skin can grow large or spread to other parts of your body, causing serious complications.\n",
@@ -256,8 +256,7 @@ object CancerData {
         Cancer(
             "8",
             "Vascular Lesion",
-            "200\n" +
-                    "Patient",
+            "All Ages\n",
             "Dangerous",
             "A type of tumor that forms from cells that make blood vessels or lymph vessels. Vascular tumors may be benign (not cancer) or malignant (cancer) and can occur anywhere in the body. They may form on the skin, in the tissues below the skin, and/or in an organ. There are many types of vascular tumors. The most common type of vascular tumor is hemangioma, which is a benign tumor that usually occurs in infants and goes away on its own.",
             "Vascular lesions can be caused by various factors, and the specific cause often depends on the type of lesion. But mostly,Genetic factors and certain hormones may also play a role.\n",
@@ -316,6 +315,20 @@ object CancerData {
                     "If you have a family history of vascular lesions or conditions, inform your healthcare provider so appropriate screenings or preventive measures can be considered.\n",
             "Source: https://lakejacksonent.com/what-are-vascular-lesions-and-how-can-they-be-treated/",
             R.drawable.vascular_lessions
+        ),
+        Cancer(
+            "9",
+            "Healthy Skin",
+            "0\n" +
+                    "Years",
+            "No Dangerous",
+            "Your skin is Healthy",
+            "Your skin is Healthy",
+            "Your skin is Healthy",
+            "Your skin is Healthy",
+            "Your skin is Healthy",
+            "Source: -",
+            R.drawable.aman
         )
     )
 }

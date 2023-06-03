@@ -1,0 +1,8 @@
+actinic_keratosis
+basal_cell_carcinoma
+benign_keratosis
+dermatofibroma
+melanocytic_nevus
+melanoma
+squamous_cell_carcinoma
+vascular lesions
