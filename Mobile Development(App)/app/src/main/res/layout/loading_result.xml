@@ -8,10 +8,10 @@
 
    <ImageView
        android:id="@+id/wait"
-       android:layout_width="244dp"
+       android:layout_width="300dp"
        android:layout_height="244dp"
        android:layout_marginTop="120dp"
-       android:src="@drawable/wait"
+       android:src="@drawable/loading"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"

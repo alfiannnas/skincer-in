@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.example.skincerinapp.createCustomTempFile
 import com.example.skincerinapp.databinding.FragmentScanBinding
+import com.example.skincerinapp.responseScan.LoadingResult
 import com.example.skincerinapp.scanResult.ScanResultActivity
 import java.io.File
 import java.io.FileOutputStream
@@ -31,10 +32,8 @@ class ScanFragment : Fragment() {
     private var _binding: FragmentScanBinding? = null
     private val binding get() = _binding!!
     private var getFile: File? = null
-    companion object {
-        private val REQUIRED_PERMISSIONS = arrayOf(android.Manifest.permission.CAMERA)
-        private const val REQUEST_CODE_PERMISSIONS = 10
-    }
+    private var isImageSelected: Boolean = false
+
     @Deprecated("Deprecated in Java")
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -63,7 +62,7 @@ class ScanFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentScanBinding.inflate(inflater, container, false)
-
+        binding.checkButton.isEnabled = false
 
         binding.checkButton.setOnClickListener {
             navigateToResultFragment()
@@ -86,8 +85,13 @@ class ScanFragment : Fragment() {
     }
 
     private fun navigateToResultFragment() {
-        val intent = Intent(requireContext(), ScanResultActivity::class.java)
-        startActivity(intent)
+        if (isImageSelected) {
+            val intent = Intent(requireContext(), LoadingResult::class.java)
+            intent.putExtra("imageUri", getFile?.path)
+            startActivity(intent)
+        } else {
+            Toast.makeText(requireContext(), "Pilih gambar terlebih dahulu", Toast.LENGTH_SHORT).show()
+        }
     }
 
 
@@ -103,6 +107,8 @@ class ScanFragment : Fragment() {
             )
             currentPhotoPath = it.absolutePath
             intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+            isImageSelected = true
+            binding.checkButton.isEnabled = true
             launcherIntentCamera.launch(intent)
         }
     }
@@ -118,6 +124,7 @@ class ScanFragment : Fragment() {
 
                 getFile = file
                 binding.imageBanner.setImageBitmap(BitmapFactory.decodeFile(file.path))
+
             }
         }
     }
@@ -132,6 +139,8 @@ class ScanFragment : Fragment() {
                 val myFile = uriToFile(uri, requireContext())
                 getFile = myFile
                 binding.imageBanner.setImageURI(uri)
+                isImageSelected = true
+                binding.checkButton.isEnabled = true
             }
         }
     }
@@ -164,6 +173,8 @@ class ScanFragment : Fragment() {
         _binding = null
     }
 
-
-
+    companion object {
+        private val REQUIRED_PERMISSIONS = arrayOf(android.Manifest.permission.CAMERA)
+        private const val REQUEST_CODE_PERMISSIONS = 10
+    }
 }
