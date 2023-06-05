@@ -64,14 +64,16 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.loginResult.observe(this) { success ->
             if (success ) {
+
+                Toast.makeText(this, getString(R.string.welcome), Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
                 val sharedPref = getSharedPreferences("login_pref", Context.MODE_PRIVATE)
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLoggedIn", true)
                 editor.apply()
 
-                Toast.makeText(this, getString(R.string.welcome), Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
                 finish()
             } else {
                 Toast.makeText(this,  getString(R.string.wrong_login), Toast.LENGTH_SHORT).show()

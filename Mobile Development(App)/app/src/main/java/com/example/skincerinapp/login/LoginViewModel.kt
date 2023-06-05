@@ -1,6 +1,5 @@
 package com.example.skincerinapp.login
 
-
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -23,7 +22,6 @@ class LoginViewModel : ViewModel() {
     private val _showProgressBar = MutableLiveData<Boolean>()
     val showProgressBar: LiveData<Boolean> = _showProgressBar
 
-
     fun signInWithEmailAndPassword(email: String, password: String) {
         _showProgressBar.value = true
         val request = LoginRequest(email, password)
@@ -32,10 +30,15 @@ class LoginViewModel : ViewModel() {
         call.enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {
+                    val loginResponse = response.body()
+                    if (loginResponse?.message == "Welcome Back!") {
 
-                    _loginResult.value = true
+                        _loginResult.value = true
 
-
+                    } else {
+                        _loginResult.value = false
+                        Log.e("LoginActivity", "Login failed: ${loginResponse?.message}")
+                    }
                 } else {
                     _loginResult.value = false
                     Log.e("LoginActivity", "Login failed: ${response.code()}")
@@ -49,6 +52,7 @@ class LoginViewModel : ViewModel() {
                 _showProgressBar.value = false
             }
         })
+
     }
 
     fun signInWithGoogle(idToken: String) {
@@ -61,7 +65,5 @@ class LoginViewModel : ViewModel() {
                 _showProgressBar.value = false
             }
     }
-
-
 
 }
