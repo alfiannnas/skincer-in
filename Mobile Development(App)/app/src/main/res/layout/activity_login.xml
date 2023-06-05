@@ -32,7 +32,6 @@
         android:fontFamily="@font/nunito_extrabold"
         android:gravity="center"
         android:text="@string/title_login_page"
-        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

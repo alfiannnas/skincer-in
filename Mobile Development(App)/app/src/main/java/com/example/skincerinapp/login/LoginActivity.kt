@@ -80,9 +80,9 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.showProgressBar.observe(this) { show ->
             if (show) {
-                binding.progressBar.visibility = View.VISIBLE // Tampilkan ProgressBar
+                binding.progressBar.visibility = View.VISIBLE
             } else {
-                binding.progressBar.visibility = View.GONE // Sembunyikan ProgressBar
+                binding.progressBar.visibility = View.GONE
             }
         }
 

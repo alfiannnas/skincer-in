@@ -116,7 +116,9 @@ class ScanResultActivity : AppCompatActivity() {
         val labels = loadLabels("label.txt")
         val maxIndex = outputArray.indices.maxByOrNull { outputArray[it] } ?: -1
 
-        val result = if (maxIndex != -1) {
+        val confidenceThreshold = 0.6
+
+        val result = if (maxIndex != -1 && outputArray[maxIndex] >= confidenceThreshold) {
             ClassificationResult(labels[maxIndex], outputArray[maxIndex])
         } else {
             ClassificationResult("Unable to classify", 0f)
@@ -171,8 +173,16 @@ class ScanResultActivity : AppCompatActivity() {
             binding.symptomsText.text = resultCancer.symptoms
             binding.treatmentText.text = resultCancer.treatment
             binding.preventionText.text = resultCancer.prevention
+            binding.source.text =resultCancer.source
         } else {
-            println("Kulit anda sehat")
+            binding.patient.text = "-"
+            binding.danger.text = "-"
+            binding.descriptionText.text = getString(R.string.healthy_skin)
+            binding.causeText.text = getString(R.string.healthy_skin)
+            binding.symptomsText.text = getString(R.string.healthy_skin)
+            binding.treatmentText.text = getString(R.string.healthy_skin)
+            binding.preventionText.text = getString(R.string.healthy_skin)
+
         }
     }
 }

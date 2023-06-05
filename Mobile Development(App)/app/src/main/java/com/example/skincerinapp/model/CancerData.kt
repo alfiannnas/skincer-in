@@ -6,7 +6,7 @@ object CancerData {
     val cancer = listOf(
         Cancer(
             "1",
-            "Actinic keratosis",
+            "Actinic Keratosis",
             ">40\n" +
                     "Years",
             "Not Dangerous",
@@ -84,7 +84,7 @@ object CancerData {
         ),
         Cancer(
             "3",
-            "Benign Keratosis / Seborrheic Keratosis",
+            "Benign Keratosis",
             "50\n" +
                     "Years",
             "No Dangerous",
@@ -315,20 +315,6 @@ object CancerData {
                     "If you have a family history of vascular lesions or conditions, inform your healthcare provider so appropriate screenings or preventive measures can be considered.\n",
             "Source: https://lakejacksonent.com/what-are-vascular-lesions-and-how-can-they-be-treated/",
             R.drawable.vascular_lessions
-        ),
-        Cancer(
-            "9",
-            "Healthy Skin",
-            "0\n" +
-                    "Years",
-            "No Dangerous",
-            "Your skin is Healthy",
-            "Your skin is Healthy",
-            "Your skin is Healthy",
-            "Your skin is Healthy",
-            "Your skin is Healthy",
-            "Source: -",
-            R.drawable.aman
         )
     )
 }
