@@ -1,0 +1,7 @@
+runtime: nodejs14
+env_variables:
+  SQL_DATABASE: database_name
+  SQL_USER: database_user
+  SQL_PASSWORD: database_password
+  SQL_CONNECTION_NAME: connection_name
+  JWT_SECRET : secret_key
