@@ -1,5 +1,6 @@
 package com.example.skincerinapp.scanResult
 
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +8,14 @@ import android.os.Bundle
 import android.view.MenuItem
 import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivityScanResultBinding
+import com.example.skincerinapp.model.Cancer
+import com.example.skincerinapp.model.CancerData
+import com.example.skincerinapp.model.CancerData.cancer
 import org.tensorflow.lite.Interpreter
+import java.io.BufferedReader
 import java.io.FileInputStream
+import java.io.IOException
+import java.io.InputStreamReader
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.IntBuffer
@@ -71,7 +78,7 @@ class ScanResultActivity : AppCompatActivity() {
         return scaledBitmap
     }
 
-    private fun classifyImage(bitmap: Bitmap): String {
+    private fun classifyImage(bitmap: Bitmap): ClassificationResult {
         if (!::interpreter.isInitialized) {
             interpreter = Interpreter(tfliteModel)
         }
@@ -79,45 +86,93 @@ class ScanResultActivity : AppCompatActivity() {
         val inputShape = interpreter.getInputTensor(0).shape()
         val inputSize = inputShape[1] * inputShape[2] * inputShape[3]
 
-        val inputBuffer = ByteBuffer.allocateDirect(inputSize * 4) // 4 bytes for each float
+        val inputBuffer = ByteBuffer.allocateDirect(inputSize * 4)
         inputBuffer.order(ByteOrder.nativeOrder())
         val pixels = IntArray(bitmap.width * bitmap.height)
         bitmap.getPixels(pixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
 
-        // Iterate over each pixel and extract the color components
+
         for (pixel in pixels) {
             val red = (pixel shr 16) and 0xFF
             val green = (pixel shr 8) and 0xFF
             val blue = pixel and 0xFF
 
-            inputBuffer.putFloat(red.toFloat())
-            inputBuffer.putFloat(green.toFloat())
-            inputBuffer.putFloat(blue.toFloat())
+            inputBuffer.putFloat(red.toFloat() )
+            inputBuffer.putFloat(green.toFloat() )
+            inputBuffer.putFloat(blue.toFloat() )
         }
 
-        val outputSize = 150 * 150 * 3 * 4 // 4 bytes for each float
-        val outputBuffer = ByteBuffer.allocateDirect(outputSize)
+        val outputShape = interpreter.getOutputTensor(0).shape()
+        val outputSize = outputShape[1]
+
+        val outputBuffer = ByteBuffer.allocateDirect(outputSize * 4)
+        outputBuffer.order(ByteOrder.nativeOrder())
         interpreter.run(inputBuffer, outputBuffer)
 
-        val outputArray = FloatArray(outputBuffer.remaining() / 4)
-        outputBuffer.order(ByteOrder.nativeOrder()).asFloatBuffer().get(outputArray)
+        val outputArray = FloatArray(outputSize)
+        outputBuffer.rewind()
+        outputBuffer.asFloatBuffer().get(outputArray)
 
-        var maxConfidence = -1.0f
-        var maxIndex = -1
-        for (i in outputArray.indices) {
-            if (outputArray[i] > maxConfidence) {
-                maxConfidence = outputArray[i]
-                maxIndex = i
-            }
+        val labels = loadLabels("label.txt")
+        val maxIndex = outputArray.indices.maxByOrNull { outputArray[it] } ?: -1
+
+        val result = if (maxIndex != -1) {
+            ClassificationResult(labels[maxIndex], outputArray[maxIndex])
+        } else {
+            ClassificationResult("Unable to classify", 0f)
         }
 
-        val result = "Class: $maxIndex, Confidence: $maxConfidence"
         return result
     }
 
+    private data class ClassificationResult(val className: String, val confidence: Float)
+    private fun loadLabels(labelPath: String): List<String> {
+        val labels = mutableListOf<String>()
+        try {
+            val inputStream = assets.open(labelPath)
+            val reader = BufferedReader(InputStreamReader(inputStream))
+            var line: String?
+            while (reader.readLine().also { line = it } != null) {
+                labels.add(line.orEmpty())
+            }
+            reader.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        return labels
+    }
 
 
-    private fun processResult(result: String) {
-        binding.indicator.text = result
+    private fun getCancer(): List<Cancer> {
+        return CancerData.cancer
+    }
+
+    @SuppressLint("StringFormatInvalid")
+    private fun processResult(result: ClassificationResult) {
+
+        val className = result.className
+        val confidence = result.confidence.toString()
+
+        val resultText = getString(R.string.result_scan, className)
+        val acurationText = getString(R.string.acuration, confidence)
+
+        binding.indicator.text = resultText
+        binding.confidence.text = acurationText
+
+
+        val cancerList = getCancer()
+        val resultCancer = cancerList.find { it.name == result.className }
+
+        if (resultCancer != null) {
+            binding.patient.text = resultCancer.patient
+            binding.danger.text = resultCancer.Dangerous
+            binding.descriptionText.text = resultCancer.desc
+            binding.causeText.text = resultCancer.causes
+            binding.symptomsText.text = resultCancer.symptoms
+            binding.treatmentText.text = resultCancer.treatment
+            binding.preventionText.text = resultCancer.prevention
+        } else {
+            println("Kulit anda sehat")
+        }
     }
 }

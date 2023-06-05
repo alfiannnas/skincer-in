@@ -20,11 +20,12 @@ class LoginViewModel : ViewModel() {
     private val _loginResult = MutableLiveData<Boolean>()
     val loginResult: LiveData<Boolean> = _loginResult
     private val apiConfig = ApiConfig()
-    private val _token = MutableLiveData<String>()
-    val token: LiveData<String> = _token
+    private val _showProgressBar = MutableLiveData<Boolean>()
+    val showProgressBar: LiveData<Boolean> = _showProgressBar
 
 
     fun signInWithEmailAndPassword(email: String, password: String) {
+        _showProgressBar.value = true
         val request = LoginRequest(email, password)
         val call = apiConfig.getApiService().login(request)
 
@@ -33,26 +34,31 @@ class LoginViewModel : ViewModel() {
                 if (response.isSuccessful) {
 
                     _loginResult.value = true
-                    _token.value = response.body()?.token!!
+
 
                 } else {
                     _loginResult.value = false
                     Log.e("LoginActivity", "Login failed: ${response.code()}")
                 }
+                _showProgressBar.value = false
             }
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 _loginResult.value = false
                 Log.e("LoginActivity", "Failed to make login request: ${t.message}")
+                _showProgressBar.value = false
             }
         })
     }
 
     fun signInWithGoogle(idToken: String) {
+        _showProgressBar.value = true
         val credential = GoogleAuthProvider.getCredential(idToken, null)
+
         auth.signInWithCredential(credential)
             .addOnCompleteListener { task ->
                 _loginResult.value = task.isSuccessful
+                _showProgressBar.value = false
             }
     }
 

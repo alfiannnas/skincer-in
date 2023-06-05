@@ -255,8 +255,8 @@ object CancerData {
         ),
         Cancer(
             "8",
-            "Vascular Lesion",
-            "All Ages\n",
+            "Vascular Lesions",
+            "All Ages",
             "Dangerous",
             "A type of tumor that forms from cells that make blood vessels or lymph vessels. Vascular tumors may be benign (not cancer) or malignant (cancer) and can occur anywhere in the body. They may form on the skin, in the tissues below the skin, and/or in an organ. There are many types of vascular tumors. The most common type of vascular tumor is hemangioma, which is a benign tumor that usually occurs in infants and goes away on its own.",
             "Vascular lesions can be caused by various factors, and the specific cause often depends on the type of lesion. But mostly,Genetic factors and certain hormones may also play a role.\n",

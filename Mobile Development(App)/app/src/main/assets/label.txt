@@ -1,8 +1,8 @@
-actinic_keratosis
-basal_cell_carcinoma
-benign_keratosis
-dermatofibroma
-melanocytic_nevus
-melanoma
-squamous_cell_carcinoma
-vascular lesions
+Actinic keratosis
+Basal Cell Carcinoma
+Benign keratosis / Seborrheic Keratosis
+Dermatofibroma
+Melanocytic Nevus
+Melanoma
+Squamous Cell Carcinoma(SCC)
+Vascular Lesions

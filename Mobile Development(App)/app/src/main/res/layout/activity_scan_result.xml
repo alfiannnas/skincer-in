@@ -54,23 +54,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:textColor="@color/black"
                     android:fontFamily="@font/nunito_extrabold"
                     android:text="@string/result_scan"
-                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/accuracy_value"
+                    android:id="@+id/confidence"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_extrabold"
-                    android:textColor="@color/black"
                     android:text="@string/acuration"
-                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/indicator" />
+
 
                 <ImageView
                     android:id="@+id/image_result"
@@ -124,7 +125,7 @@
                     app:tint="@color/black" />
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/patient"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -144,7 +145,7 @@
                     android:layout_marginTop="8dp"
                     android:contentDescription="@string/line"
                     android:src="@drawable/line"
-                    app:layout_constraintStart_toEndOf="@+id/textView7"
+                    app:layout_constraintStart_toEndOf="@+id/patient"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
@@ -159,6 +160,7 @@
                     android:contentDescription="@string/detail_image" />
 
                 <TextView
+                    android:id="@+id/danger"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -180,7 +182,7 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                    app:layout_constraintTop_toBottomOf="@+id/patient" />
 
                 <TextView
                     android:id="@+id/description_text"

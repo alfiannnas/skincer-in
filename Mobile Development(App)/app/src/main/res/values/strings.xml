@@ -53,8 +53,8 @@
     <string name="see">Check this</string>
     <string name="scan_again">scan again</string>
     <string name="result_text">This is the result of our analysis!</string>
-    <string name="result_scan">Your skin is indicated \nto have: Melanoma</string>
-    <string name="acuration">Acuration Score : 90</string>
+    <string name="result_scan">Your skin is indicated \nto have: %s</string>
+    <string name="acuration">Confidence : %s</string>
     <string name="patient">patient</string>
     <string name="total_patient">3000+ \nPatients</string>
     <string name="line">line</string>
@@ -75,5 +75,6 @@
     <string name="email_already_registered">Email already registered!</string>
     <string name="about">About</string>
     <string name="enter_your_name">Enter your name</string>
+    <string name="powered_by">Powered by</string>
 
 </resources>

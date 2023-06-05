@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
@@ -74,6 +75,14 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             } else {
                 Toast.makeText(this,  getString(R.string.wrong_login), Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        viewModel.showProgressBar.observe(this) { show ->
+            if (show) {
+                binding.progressBar.visibility = View.VISIBLE // Tampilkan ProgressBar
+            } else {
+                binding.progressBar.visibility = View.GONE // Sembunyikan ProgressBar
             }
         }
 

@@ -53,8 +53,8 @@
     <string name="see">Cek ini</string>
     <string name="scan_again">Scan Ulang</string>
     <string name="result_text">Ini adalah hasil analisis kami!</string>
-    <string name="result_scan">Kulit Anda diindikasikan \nmemiliki: Melanoma</string>
-    <string name="acuration">Skor akurasi : 90</string>
+    <string name="result_scan">Kulit Anda diindikasikan \nmemiliki: %s</string>
+    <string name="acuration">Skor akurasi : %s</string>
     <string name="patient">Pasien</string>
     <string name="total_patient">3000+ \nPatients</string>
     <string name="line">garis</string>
@@ -75,5 +75,6 @@
     <string name="email_already_registered">Email sudah terdaftar sebelumnya!</string>
     <string name="about">Tentang kami</string>
     <string name="enter_your_name">Masukan nama kamu</string>
+    <string name="powered_by">Powered by</string>
 
 </resources>
