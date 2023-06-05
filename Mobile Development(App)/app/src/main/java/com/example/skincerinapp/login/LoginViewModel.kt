@@ -52,7 +52,6 @@ class LoginViewModel : ViewModel() {
                 _showProgressBar.value = false
             }
         })
-
     }
 
     fun signInWithGoogle(idToken: String) {

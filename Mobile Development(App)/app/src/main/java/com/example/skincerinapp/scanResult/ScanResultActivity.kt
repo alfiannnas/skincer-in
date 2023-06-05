@@ -1,26 +1,31 @@
 package com.example.skincerinapp.scanResult
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Canvas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivityScanResultBinding
 import com.example.skincerinapp.model.Cancer
 import com.example.skincerinapp.model.CancerData
-import com.example.skincerinapp.model.CancerData.cancer
+import com.itextpdf.text.Document
+import com.itextpdf.text.PageSize
+import com.itextpdf.text.pdf.PdfWriter
 import org.tensorflow.lite.Interpreter
-import java.io.BufferedReader
-import java.io.FileInputStream
-import java.io.IOException
-import java.io.InputStreamReader
+import java.io.*
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
-import java.nio.IntBuffer
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
+
 
 class ScanResultActivity : AppCompatActivity() {
 
@@ -44,15 +49,34 @@ class ScanResultActivity : AppCompatActivity() {
 
             binding.imageResult.setImageBitmap(bitmap)
 
-            // Preprocess the image if required
             val processedBitmap = preprocessImage(bitmap)
-
-            // Perform inference
             val result = classifyImage(processedBitmap)
 
-            // Process the result as per your requirements
             processResult(result)
         }
+
+        binding.button.setOnClickListener {
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                ) != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                    this, arrayOf(
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                    ), 1
+                )
+            } else {
+                convertToPdf()
+            }
+        }
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -185,4 +209,53 @@ class ScanResultActivity : AppCompatActivity() {
 
         }
     }
+
+    private fun convertToPdf() {
+        val directory = getExternalFilesDir(null)
+        val pdfFilePath = "$directory/activity.pdf"
+
+        try {
+            val document = Document()
+            val outputStream = FileOutputStream(pdfFilePath)
+            PdfWriter.getInstance(document, outputStream)
+            document.open()
+
+            val bitmap = Bitmap.createBitmap(binding.root.width, binding.root.height, Bitmap.Config.ARGB_8888)
+            val canvas = Canvas(bitmap)
+            binding.root.draw(canvas)
+
+            val stream = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+            val byteArray = stream.toByteArray()
+
+            val image = com.itextpdf.text.Image.getInstance(byteArray)
+            image.scaleToFit(PageSize.A4.width, PageSize.A4.height)
+            image.setAbsolutePosition(0f, 0f)
+            document.add(image)
+
+            document.close()
+
+            Toast.makeText(this, "Activity converted to PDF", Toast.LENGTH_SHORT).show()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 1 && grantResults.isNotEmpty() &&
+            grantResults[0] == PackageManager.PERMISSION_GRANTED &&
+            grantResults[1] == PackageManager.PERMISSION_GRANTED
+        ) {
+            convertToPdf()
+        } else {
+            Toast.makeText(this, "Permission denied. Cannot save PDF.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
 }

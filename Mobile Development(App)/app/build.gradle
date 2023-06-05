@@ -68,4 +68,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.15.0'
 
     implementation 'org.tensorflow:tensorflow-lite:2.5.0'
+
+    implementation 'com.itextpdf:itextpdf:5.5.13.2'
+
 }
