@@ -57,7 +57,7 @@
                     android:fontFamily="@font/nunito_extrabold"
                     android:text="@string/result_scan"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,6 +65,7 @@
                     android:id="@+id/confidence"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/nunito_extrabold"
                     android:text="@string/acuration"
                     android:textColor="@color/black"

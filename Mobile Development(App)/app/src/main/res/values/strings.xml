@@ -53,7 +53,7 @@
     <string name="see">Check this</string>
     <string name="scan_again">scan again</string>
     <string name="result_text">This is the result of our analysis!</string>
-    <string name="result_scan">Your skin is indicated \nto have: %s</string>
+    <string name="result_scan">Scan Result:\n%s</string>
     <string name="acuration">Confidence : %s</string>
     <string name="patient">patient</string>
     <string name="total_patient">3000+ \nPatients</string>

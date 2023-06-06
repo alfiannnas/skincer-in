@@ -53,7 +53,7 @@
     <string name="see">Cek ini</string>
     <string name="scan_again">Scan Ulang</string>
     <string name="result_text">Ini adalah hasil analisis kami!</string>
-    <string name="result_scan">Kulit Anda diindikasikan \nmemiliki: %s</string>
+    <string name="result_scan">Hasil Scan: \n%s</string>
     <string name="acuration">Skor akurasi : %s</string>
     <string name="patient">Pasien</string>
     <string name="total_patient">3000+ \nPatients</string>

@@ -195,7 +195,7 @@ class ScanResultActivity : AppCompatActivity() {
 
     private fun convertToPdf() {
         val directory = getExternalFilesDir(null)
-        val pdfFilePath = "$directory/activity.pdf"
+        val pdfFilePath = "$directory/scan_result.pdf"
 
         try {
             val document = Document()
@@ -221,7 +221,7 @@ class ScanResultActivity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
                 type = "application/pdf"
-                putExtra(Intent.EXTRA_TITLE, "activity.pdf")
+                putExtra(Intent.EXTRA_TITLE, "scan_result.pdf")
             }
             startActivityForResult(intent, SAVE_PDF_REQUEST_CODE)
 
@@ -236,7 +236,7 @@ class ScanResultActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == SAVE_PDF_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             data?.data?.let { uri ->
-                val inputStream = FileInputStream(File(getExternalFilesDir(null), "activity.pdf"))
+                val inputStream = FileInputStream(File(getExternalFilesDir(null), "scan_result.pdf"))
                 val outputStream = contentResolver.openOutputStream(uri)
                 outputStream?.let { inputStream.copyTo(it) }
                 inputStream.close()
