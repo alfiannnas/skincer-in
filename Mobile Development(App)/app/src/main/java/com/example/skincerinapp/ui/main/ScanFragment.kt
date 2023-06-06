@@ -174,7 +174,11 @@ class ScanFragment : Fragment() {
     }
 
     companion object {
-        private val REQUIRED_PERMISSIONS = arrayOf(android.Manifest.permission.CAMERA)
+        private val REQUIRED_PERMISSIONS = arrayOf(
+            android.Manifest.permission.CAMERA,
+            android.Manifest.permission.READ_EXTERNAL_STORAGE,
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+        )
         private const val REQUEST_CODE_PERMISSIONS = 10
     }
 }
