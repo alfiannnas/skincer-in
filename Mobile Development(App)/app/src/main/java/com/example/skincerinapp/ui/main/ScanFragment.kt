@@ -21,7 +21,6 @@ import androidx.core.content.FileProvider
 import com.example.skincerinapp.createCustomTempFile
 import com.example.skincerinapp.databinding.FragmentScanBinding
 import com.example.skincerinapp.responseScan.LoadingResult
-import com.example.skincerinapp.scanResult.ScanResultActivity
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream

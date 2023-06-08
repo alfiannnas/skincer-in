@@ -7,7 +7,7 @@ import com.example.skincerinapp.databinding.SliderItemBinding
 
 class SliderAdapter(private val slider: List<Slider>) : RecyclerView.Adapter<SliderAdapter.SliderViewHolder>() {
 
-    inner class SliderViewHolder(private val binding: SliderItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class SliderViewHolder(binding: SliderItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         private val textTitle = binding.sliderTitle
         private val textDescription = binding.sliderDescription

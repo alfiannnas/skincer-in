@@ -5,8 +5,6 @@ import androidx.lifecycle.ViewModel
 import com.example.skincerinapp.api.ApiConfig
 import com.example.skincerinapp.model.SignupRequest
 import com.example.skincerinapp.model.SignupResponse
-import com.google.android.gms.fido.u2f.api.common.RegisterRequest
-import com.google.firebase.auth.FirebaseAuth
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,7 +18,7 @@ class SignUpViewModel : ViewModel() {
         call.enqueue(object : Callback<SignupResponse> {
             override fun onResponse(call: Call<SignupResponse>, response: Response<SignupResponse>) {
                 if (response.isSuccessful) {
-                    val message = response.body()?.message
+                    response.body()?.message
                     callback?.invoke(true, null)
                 } else {
                     Log.e("SignUpViewModel", "Registration failed: ${response.code()}")

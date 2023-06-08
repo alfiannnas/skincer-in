@@ -75,13 +75,13 @@ class ScanResultActivity : AppCompatActivity() {
         val fileChannel = FileInputStream(fileDescriptor.fileDescriptor).channel
         val startOffset = fileDescriptor.startOffset
         val declaredLength = fileDescriptor.declaredLength
+
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
     }
 
     private fun preprocessImage(bitmap: Bitmap): Bitmap {
         val targetSize = 150
-        val scaledBitmap = Bitmap.createScaledBitmap(bitmap, targetSize, targetSize, false)
-        return scaledBitmap
+        return Bitmap.createScaledBitmap(bitmap, targetSize, targetSize, false)
     }
 
     private fun classifyImage(bitmap: Bitmap): ClassificationResult {
@@ -223,6 +223,7 @@ class ScanResultActivity : AppCompatActivity() {
                 type = "application/pdf"
                 putExtra(Intent.EXTRA_TITLE, "scan_result.pdf")
             }
+
             startActivityForResult(intent, SAVE_PDF_REQUEST_CODE)
 
             Toast.makeText(this, "Activity converted to PDF", Toast.LENGTH_SHORT).show()

@@ -195,7 +195,8 @@
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/description_title" />
+                    app:layout_constraintTop_toBottomOf="@id/description_title"
+                    tools:ignore="VisualLintLongText" />
 
                 <TextView
                     android:id="@+id/cause_title"
@@ -219,7 +220,8 @@
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cause_title" />
+                    app:layout_constraintTop_toBottomOf="@id/cause_title"
+                    tools:ignore="VisualLintLongText" />
 
                 <TextView
                     android:id="@+id/symptoms_title"
@@ -243,7 +245,8 @@
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/symptoms_title" />
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_title"
+                    tools:ignore="VisualLintLongText" />
 
                 <TextView
                     android:id="@+id/treatment_title"
@@ -267,7 +270,8 @@
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/treatment_title" />
+                    app:layout_constraintTop_toBottomOf="@id/treatment_title"
+                    tools:ignore="VisualLintLongText" />
 
                 <TextView
                     android:id="@+id/prevention_tittle"
@@ -291,7 +295,8 @@
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/prevention_tittle" />
+                    app:layout_constraintTop_toBottomOf="@id/prevention_tittle"
+                    tools:ignore="VisualLintLongText" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

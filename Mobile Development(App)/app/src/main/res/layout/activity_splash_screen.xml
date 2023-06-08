@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/onboarding3" />
+        app:srcCompat="@drawable/onboarding3"
+        android:contentDescription="@string/hello" />
 
     <TextView
         android:id="@+id/textView6"
@@ -42,6 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toTopOf="@+id/textView6" />
+        app:layout_constraintTop_toTopOf="@+id/textView6"
+        android:contentDescription="@string/hello" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

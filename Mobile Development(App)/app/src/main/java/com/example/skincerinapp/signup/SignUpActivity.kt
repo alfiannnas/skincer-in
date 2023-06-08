@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivitySignUpBinding
-import com.google.firebase.auth.FirebaseAuthUserCollisionException
 
 class SignUpActivity : AppCompatActivity() {
 
