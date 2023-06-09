@@ -212,7 +212,7 @@ object CancerData {
         ),
         Cancer(
             "7",
-            "Squamous Cell Carcinoma(SCC)",
+            "Squamous Cell Carcinoma",
             ">50\n" +
                     "Years",
             "Dangerous",

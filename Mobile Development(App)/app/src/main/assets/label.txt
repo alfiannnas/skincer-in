@@ -4,5 +4,6 @@ Benign Keratosis
 Dermatofibroma
 Melanocytic Nevus
 Melanoma
-Squamous Cell Carcinoma(SCC)
+Normal Skin
+Squamous Cell Carcinoma
 Vascular Lesions

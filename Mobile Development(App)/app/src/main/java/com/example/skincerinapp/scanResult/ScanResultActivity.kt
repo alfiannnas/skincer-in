@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import com.example.skincerinapp.R
@@ -23,7 +24,6 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
-
 
 class ScanResultActivity : AppCompatActivity() {
 
@@ -116,6 +116,7 @@ class ScanResultActivity : AppCompatActivity() {
         interpreter.run(inputBuffer, outputBuffer)
 
         val outputArray = FloatArray(outputSize)
+
         outputBuffer.rewind()
         outputBuffer.asFloatBuffer().get(outputArray)
 
@@ -128,6 +129,12 @@ class ScanResultActivity : AppCompatActivity() {
             ClassificationResult(labels[maxIndex], outputArray[maxIndex])
         } else {
             ClassificationResult("Unable to classify", 0f)
+        }
+
+        outputBuffer.rewind()
+        while (outputBuffer.hasRemaining()) {
+            val value = outputBuffer.float
+            Log.d("OutputBuffer", value.toString())
         }
 
         return result
