@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
             R.id.about -> {
-                val url = "skincer.in"
+                val url = "https://skincer.in"
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.data = Uri.parse(url)
                 startActivity(intent)

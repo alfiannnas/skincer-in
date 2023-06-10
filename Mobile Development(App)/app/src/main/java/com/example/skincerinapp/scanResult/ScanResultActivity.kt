@@ -123,7 +123,7 @@ class ScanResultActivity : AppCompatActivity() {
         val labels = loadLabels("label.txt")
         val maxIndex = outputArray.indices.maxByOrNull { outputArray[it] } ?: -1
 
-        val confidenceThreshold = 0.6
+        val confidenceThreshold = 0.5
 
         val result = if (maxIndex != -1 && outputArray[maxIndex] >= confidenceThreshold) {
             ClassificationResult(labels[maxIndex], outputArray[maxIndex])
