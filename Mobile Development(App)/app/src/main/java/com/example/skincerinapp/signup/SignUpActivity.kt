@@ -70,7 +70,7 @@ class SignUpActivity : AppCompatActivity() {
                 binding.passwordEditTextLayout.error = getString(R.string.error_passrword)
                 isValid = false
             }
-            password.length <= 8 -> {
+            password.length < 8 -> {
                 binding.passwordEditTextLayout.error = getString(R.string.password_leght)
                 isValid = false
             }

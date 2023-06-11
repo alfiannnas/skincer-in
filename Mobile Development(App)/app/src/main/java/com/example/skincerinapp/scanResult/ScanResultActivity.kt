@@ -8,9 +8,9 @@ import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.example.skincerinapp.R
 import com.example.skincerinapp.databinding.ActivityScanResultBinding
 import com.example.skincerinapp.model.Cancer
@@ -18,47 +18,42 @@ import com.example.skincerinapp.model.CancerData
 import com.itextpdf.text.Document
 import com.itextpdf.text.PageSize
 import com.itextpdf.text.pdf.PdfWriter
-import org.tensorflow.lite.Interpreter
 import java.io.*
-import java.nio.ByteBuffer
-import java.nio.ByteOrder
-import java.nio.MappedByteBuffer
-import java.nio.channels.FileChannel
 
 class ScanResultActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityScanResultBinding
-    private val modelPath = "tf_lite_model.tflite"
-    private val tfliteModel: MappedByteBuffer by lazy { loadModel(modelPath) }
-    private lateinit var interpreter: Interpreter
+    private lateinit var viewModel: ScanResultViewModel
     private val SAVE_PDF_REQUEST_CODE = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityScanResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         supportActionBar?.setTitle(R.string.scan_result)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val imageUri = intent.getStringExtra("imageUri")
+        val bitmap = BitmapFactory.decodeFile(imageUri)
 
-        if (imageUri != null) {
-            val bitmap = BitmapFactory.decodeFile(imageUri)
+        binding.imageResult.setImageBitmap(bitmap)
 
-            binding.imageResult.setImageBitmap(bitmap)
+        viewModel = ViewModelProvider(this)[ScanResultViewModel::class.java]
 
-            val processedBitmap = preprocessImage(bitmap)
-            val result = classifyImage(processedBitmap)
+        viewModel.errorMessage.observe(this) { errorMessage ->
+            Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+        }
 
+        viewModel.scanResult.observe(this) { result ->
             processResult(result)
+        }
+
+        imageUri?.let {
+            viewModel.processImage(it)
         }
 
         binding.button.setOnClickListener {
             convertToPdf()
         }
-
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -69,102 +64,12 @@ class ScanResultActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun loadModel(modelPath: String): MappedByteBuffer {
-        val assetManager = assets
-        val fileDescriptor = assetManager.openFd(modelPath)
-        val fileChannel = FileInputStream(fileDescriptor.fileDescriptor).channel
-        val startOffset = fileDescriptor.startOffset
-        val declaredLength = fileDescriptor.declaredLength
-
-        return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
-    }
-
-    private fun preprocessImage(bitmap: Bitmap): Bitmap {
-        val targetSize = 150
-        return Bitmap.createScaledBitmap(bitmap, targetSize, targetSize, false)
-    }
-
-    private fun classifyImage(bitmap: Bitmap): ClassificationResult {
-        if (!::interpreter.isInitialized) {
-            interpreter = Interpreter(tfliteModel)
-        }
-
-        val inputShape = interpreter.getInputTensor(0).shape()
-        val inputSize = inputShape[1] * inputShape[2] * inputShape[3]
-
-        val inputBuffer = ByteBuffer.allocateDirect(inputSize * 4)
-        inputBuffer.order(ByteOrder.nativeOrder())
-        val pixels = IntArray(bitmap.width * bitmap.height)
-        bitmap.getPixels(pixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
-
-
-        for (pixel in pixels) {
-            val red = (pixel shr 16) and 0xFF
-            val green = (pixel shr 8) and 0xFF
-            val blue = pixel and 0xFF
-
-            inputBuffer.putFloat(red.toFloat() )
-            inputBuffer.putFloat(green.toFloat() )
-            inputBuffer.putFloat(blue.toFloat() )
-        }
-
-        val outputShape = interpreter.getOutputTensor(0).shape()
-        val outputSize = outputShape[1]
-
-        val outputBuffer = ByteBuffer.allocateDirect(outputSize * 4)
-        outputBuffer.order(ByteOrder.nativeOrder())
-        interpreter.run(inputBuffer, outputBuffer)
-
-        val outputArray = FloatArray(outputSize)
-
-        outputBuffer.rewind()
-        outputBuffer.asFloatBuffer().get(outputArray)
-
-        val labels = loadLabels("label.txt")
-        val maxIndex = outputArray.indices.maxByOrNull { outputArray[it] } ?: -1
-
-        val confidenceThreshold = 0.5
-
-        val result = if (maxIndex != -1 && outputArray[maxIndex] >= confidenceThreshold) {
-            ClassificationResult(labels[maxIndex], outputArray[maxIndex])
-        } else {
-            ClassificationResult("Unable to classify", 0f)
-        }
-
-        outputBuffer.rewind()
-        while (outputBuffer.hasRemaining()) {
-            val value = outputBuffer.float
-            Log.d("OutputBuffer", value.toString())
-        }
-
-        return result
-    }
-
-    private data class ClassificationResult(val className: String, val confidence: Float)
-
-    private fun loadLabels(labelPath: String): List<String> {
-        val labels = mutableListOf<String>()
-        try {
-            val inputStream = assets.open(labelPath)
-            val reader = BufferedReader(InputStreamReader(inputStream))
-            var line: String?
-            while (reader.readLine().also { line = it } != null) {
-                labels.add(line.orEmpty())
-            }
-            reader.close()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return labels
-    }
-
-
     private fun getCancer(): List<Cancer> {
         return CancerData.cancer
     }
 
     @SuppressLint("StringFormatInvalid")
-    private fun processResult(result: ClassificationResult) {
+    private fun processResult(result: ScanResultViewModel.ClassificationResult) {
 
         val className = result.className
         val confidence = result.confidence.toString()
@@ -196,7 +101,7 @@ class ScanResultActivity : AppCompatActivity() {
             binding.symptomsText.text = getString(R.string.healthy_skin)
             binding.treatmentText.text = getString(R.string.healthy_skin)
             binding.preventionText.text = getString(R.string.healthy_skin)
-
+            binding.source.text ="-"
         }
     }
 
