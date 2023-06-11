@@ -16,7 +16,7 @@ Theme :
 ### Featured Technologies
 
 
-## Android
+## Android Development Learning Path
 ### Steps To Clone Project
 1. Pull the project from android or clone this repository
 2. Open In Android studio
