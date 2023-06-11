@@ -49,10 +49,10 @@ Theme :
 ## Machine Learning Path
 ### Models Accuracy and Loss 
 1. Train and Val Accuracy (train > 98 and val > 92)
-<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/98ea2975-eada-4a34-90f7-21cea51c6385" alt="4" width="auto" height="auto"> <br><br>
+<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/7616b10b-79ed-4291-ab7b-302078b88538" alt="4" width="auto" height="auto"> <br><br>
 
-2. Train and Val Loss (train 0.23 and val 0.42)
-<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/7bfe58dc-8a52-4290-8c00-d04312c52afb" alt="4" width="auto" height="auto"> <br><br>
-  
+2. Train and Val Loss (train 0.23 and val 0.42)![train loss]
+<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/6db645a5-35e2-4da0-b599-5a0c718f7ee6" alt="4" width="auto" height="auto"> <br><br>
+
 3. Test Accuracy 
-<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/e2f55920-15e1-4878-9e7f-cc6cbc755d23" alt="4" width="auto" height="auto"> <br><br>
+<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/4eba00de-bcf4-4f42-9ed1-24a0a14a25b5" alt="4" width="auto" height="auto"><br><br>
