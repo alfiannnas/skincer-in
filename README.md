@@ -47,11 +47,11 @@ Theme :
 ### Featured Technologies
   
 ## Machine Learning Path
-### Models Accuracy and Loss
-1. Train and Val Accuracy 
+### Models Accuracy and Loss 
+1. Train and Val Accuracy (train > 98 and val > 92)
 <img src="https://github.com/alfiannnas/skincer-in/assets/99014018/98ea2975-eada-4a34-90f7-21cea51c6385" alt="4" width="auto" height="auto"> <br><br>
 
-2. Train and Val Loss 
+2. Train and Val Loss (train 0.23 and val 0.42)
 <img src="https://github.com/alfiannnas/skincer-in/assets/99014018/7bfe58dc-8a52-4290-8c00-d04312c52afb" alt="4" width="auto" height="auto"> <br><br>
   
 3. Test Accuracy 
