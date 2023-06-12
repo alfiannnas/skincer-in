@@ -1,5 +1,5 @@
 # Skincer-In, Final Capstone Project
-<masukin description>
+Is an application that can help people detect 8 different tumors that may form in their skin. This application also educate its user on how to prevent and treat the cancer
 
 ### Team ID : C23-PR568
   
@@ -38,10 +38,10 @@ Human Healthcare and Living Wellbeings
 
 ## Android Development Learning Path
 ### Steps To Clone Project
-1. Pull the project from android or clone this repository
+1. Clone this repository to your device
 2. Open In Android studio
 3. Build Project
-4. Run and debugging the project
+4. Run and debugging the project on youR AVD emulator
 
 ### Featured Technologies
 * [Kotlin](kotlinlang.org)
@@ -61,9 +61,5 @@ Human Healthcare and Living Wellbeings
 ## Cloud Computing Learning Path
 ### Steps To deploy firestore to cloud functions
 
-
-
 ### Featured Technologies
   
-## Machine Learning Path
-
