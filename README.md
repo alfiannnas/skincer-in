@@ -1,17 +1,31 @@
 # Skincer-In, Final Capstone Project
 <masukin description>
 
-### Team ID : 
+### Team ID : C23-PR568
   
 ### Team Members
+1. (ML) M040DKX4205 – Alfian Kafilah Ba’its – Institut Teknologi Sumatera - [Active]
+2. (ML) M040DKX4212 – William Rusli – Institut Teknologi Sumatera - [Active]
+3. (ML) M181DSX0544 – Nicholas Rogelio – Universitas Indonesia - [Active]
+4. (MD) A040DKX4262 – Bayu Nindioko – Institut Teknologi Sumatera - [Active]
+5. (CC) C086DSY4891 – Siti Nur Khadijah – Sekolah Tinggi Teknologi Bandung - [Active]
+6. (CC) C360DSX0863 – Aulia Riefqi Ardana – Universitas Telkom - [Active]
 
 
 Theme : 
-
+Human Healthcare and Living Wellbeings
 
 ## Machine Learning Learning Path
-### Steps To Generate Model
+### Models Accuracy and Loss 
+1. Train and Val Accuracy (train > 98 and val > 92) <br>
+<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/7616b10b-79ed-4291-ab7b-302078b88538" alt="4" width="500" height="auto"> <br><br>
 
+2. Train and Val Loss (train 0.23 and val 0.42)![train loss]<br>
+<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/6db645a5-35e2-4da0-b599-5a0c718f7ee6" alt="4" width="500" height="auto"> <br><br>
+
+3. Test Accuracy <br>
+<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/4eba00de-bcf4-4f42-9ed1-24a0a14a25b5" alt="4" width="500" height="auto"><br><br>
+### Steps To Generate Model
 
 ### Featured Technologies
 
@@ -47,12 +61,4 @@ Theme :
 ### Featured Technologies
   
 ## Machine Learning Path
-### Models Accuracy and Loss 
-1. Train and Val Accuracy (train > 98 and val > 92)
-<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/7616b10b-79ed-4291-ab7b-302078b88538" alt="4" width="auto" height="auto"> <br><br>
 
-2. Train and Val Loss (train 0.23 and val 0.42)![train loss]
-<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/6db645a5-35e2-4da0-b599-5a0c718f7ee6" alt="4" width="auto" height="auto"> <br><br>
-
-3. Test Accuracy 
-<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/4eba00de-bcf4-4f42-9ed1-24a0a14a25b5" alt="4" width="auto" height="auto"><br><br>
