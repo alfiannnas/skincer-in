@@ -16,19 +16,25 @@ Theme :
 Human Healthcare and Living Wellbeings
 
 ## Machine Learning Learning Path
+### Steps To Generate Model
+1. Go to kaggle and get the API token and upload it to google collab
+2. After connecting to kaggle download the zip dataset from kaggle using collab
+3. Use Tensorflow 2.9 and restart runtime before running the rest of the cell
+4. Run the rest of the cell and dont forget to save the model
+  
+### Featured Technologies
+* [TensorFlow](https://www.tensorflow.org/)
+* [TensorFlow Lite](https://www.tensorflow.org/lite)
+  
 ### Models Accuracy and Loss 
 1. Train and Val Accuracy (train > 98 and val > 92) <br>
 <img src="https://github.com/alfiannnas/skincer-in/assets/99014018/7616b10b-79ed-4291-ab7b-302078b88538" alt="4" width="500" height="auto"> <br><br>
 
-2. Train and Val Loss (train 0.23 and val 0.42)![train loss]<br>
+2. Train and Val Loss (train 0.23 and val 0.42)<br>
 <img src="https://github.com/alfiannnas/skincer-in/assets/99014018/6db645a5-35e2-4da0-b599-5a0c718f7ee6" alt="4" width="500" height="auto"> <br><br>
 
 3. Test Accuracy <br>
 <img src="https://github.com/alfiannnas/skincer-in/assets/99014018/4eba00de-bcf4-4f42-9ed1-24a0a14a25b5" alt="4" width="500" height="auto"><br><br>
-### Steps To Generate Model
-
-### Featured Technologies
-
 
 ## Android Development Learning Path
 ### Steps To Clone Project
@@ -38,7 +44,6 @@ Human Healthcare and Living Wellbeings
 4. Run and debugging the project
 
 ### Featured Technologies
-
 * [Kotlin](kotlinlang.org)
 * [Retrofit](square.github.io)
 * [TensorFlow Lite](https://www.tensorflow.org/lite)
