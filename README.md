@@ -27,14 +27,14 @@ Human Healthcare and Living Wellbeings
 * [TensorFlow Lite](https://www.tensorflow.org/lite)
   
 ### Models Accuracy and Loss 
-1. Train and Val Accuracy (train > 98 and val > 92) <br>
-<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/7616b10b-79ed-4291-ab7b-302078b88538" alt="4" width="500" height="auto"> <br><br>
+1. Train and Val Accuracy (train > 98 and val > 92)<br>
+<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/84ce337d-bc6f-4c16-b563-bd6d483a779a" alt="4" width="500" height="auto"> <br>
 
 2. Train and Val Loss (train 0.23 and val 0.42)<br>
-<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/6db645a5-35e2-4da0-b599-5a0c718f7ee6" alt="4" width="500" height="auto"> <br><br>
+<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/aee24369-b304-4edf-a56f-cce2a2093771" alt="4" width="500" height="auto"> <br>
 
 3. Test Accuracy <br>
-<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/4eba00de-bcf4-4f42-9ed1-24a0a14a25b5" alt="4" width="500" height="auto"><br><br>
+<img src="https://github.com/alfiannnas/skincer-in/assets/99014018/6b2a3f85-7409-4b65-af2f-1923cff6795d" alt="4" width="700" height="auto"><br>
 
 ## Android Development Learning Path
 ### Steps To Clone Project
