@@ -102,7 +102,7 @@ class ScanResultViewModel(application: Application) : AndroidViewModel(applicati
         val result = if (maxIndex != -1 && outputArray[maxIndex] >= confidenceThreshold) {
             ClassificationResult(labels[maxIndex], outputArray[maxIndex])
         } else {
-            ClassificationResult("Unable to classify", 0f)
+            ClassificationResult("Normal Skin", 0f)
         }
 
         outputBuffer.rewind()
