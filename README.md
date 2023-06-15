@@ -75,5 +75,5 @@ Human Healthcare and Living Wellbeings
   
 
 ### Featured Technologies
-[Google Cloud Platform](https://cloud.google.com/)
-[Bootsrap](https://getbootstrap.com/)
+* [Google Cloud Platform](https://cloud.google.com/)
+* [Bootsrap](https://getbootstrap.com/)
