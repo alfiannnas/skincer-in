@@ -1,5 +1,5 @@
 # Skincer-In, Final Capstone Project
-Is an application that can help people detect 8 different tumors that may form in their skin. This application also educate its user on how to prevent and treat the cancer
+SkinCer-In is an application that can help people detect 8 different tumors that may form in their skin. This application also educate its user on how to prevent and treat the cancer
 
 ### Team ID : C23-PR568
   
@@ -76,3 +76,4 @@ Human Healthcare and Living Wellbeings
 
 ### Featured Technologies
 [Google Cloud Platform](https://cloud.google.com/)
+[Bootsrap](https://getbootstrap.com/)
