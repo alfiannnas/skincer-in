@@ -64,9 +64,10 @@ Human Healthcare and Living Wellbeings
 2. Open editor and move to this folder register-login-api
 3. Activated Cloud SQL Admin API
 4. Create database in Cloud SQL
-5. Change the configuration in config.js, .env, app.yaml with new configuration
-6. Configure sequelize with this command <i>sequelize db:migrate</i>
-7. Deploy your app to App Engine with this command <i>gcloud init</i> after that <i>gcloud app deploy</i>
+5. npm install
+6. Change the configuration in config.js, .env, app.yaml with new configuration
+7. Configure sequelize with this command <i>sequelize db:migrate</i>
+8. Deploy your app to App Engine with this command <i>gcloud init</i> after that <i>gcloud app deploy</i>
   
 ### Steps To Deploy Website To App Engine
 1. Clone this repository to Google Cloud Shell
