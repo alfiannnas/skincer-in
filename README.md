@@ -74,8 +74,14 @@ Human Healthcare and Living Wellbeings
 4. Deploy your app to App Engine with this command <i>gcloud init</i> after that <i>gcloud app deploy</i>
 
 ### Cloud Architecture
+
+<img src="https://github.com/alfiannnas/skincer-in/assets/73764124/316ff40a-1b63-4b0e-8e8c-87d694690bef" alt="4" width="auto" height="300">
+<br>
 <br>
 <img src="https://github.com/alfiannnas/skincer-in/assets/87576161/1e01fbf5-d478-4576-84ff-23beac0b7bcd" alt="4" width="auto" height="300"> <br><br>
+
+
+
 
 
 ### Featured Technologies
