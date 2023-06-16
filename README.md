@@ -72,7 +72,11 @@ Human Healthcare and Living Wellbeings
 1. Clone this repository to Google Cloud Shell
 2. Open editor and move to this folder landing-page-beres
 4. Deploy your app to App Engine with this command <i>gcloud init</i> after that <i>gcloud app deploy</i>
-  
+
+### Cloud Architecture
+<br>
+<img src="https://github.com/alfiannnas/skincer-in/assets/87576161/1e01fbf5-d478-4576-84ff-23beac0b7bcd" alt="4" width="auto" height="300"> <br><br>
+
 
 ### Featured Technologies
 * [Google Cloud Platform](https://cloud.google.com/)
