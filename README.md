@@ -76,7 +76,8 @@ Human Healthcare and Living Wellbeings
 ### Cloud Architecture
 1.API Login & Register
 <br>
-<img src="https://github.com/alfiannnas/skincer-in/assets/73764124/60a6eb97-b14b-4318-bc97-bdbd7e5a50e5" alt="4" width="auto" height="300">
+<img src="https://github.com/alfiannnas/skincer-in/assets/57442468/d1a4cc14-539c-4995-90e7-6da158060802" alt="4" width="auto" height="300">
+
 <br>
 <br>
 2.Skincer-in Landing-page
