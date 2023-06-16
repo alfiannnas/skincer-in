@@ -74,11 +74,15 @@ Human Healthcare and Living Wellbeings
 4. Deploy your app to App Engine with this command <i>gcloud init</i> after that <i>gcloud app deploy</i>
 
 ### Cloud Architecture
+1.API Login & Register
+<br>
+<img src="https://github.com/alfiannnas/skincer-in/assets/73764124/60a6eb97-b14b-4318-bc97-bdbd7e5a50e5" alt="4" width="auto" height="300">
+<br>
+<br>
+2.Skincer-in Landing-page
+<br>
+<img src="https://github.com/alfiannnas/skincer-in/assets/73764124/b5de5896-88f8-46b0-b8a2-00e657c3860d" alt="4" width="auto" height="300"> <br><br>
 
-<img src="https://github.com/alfiannnas/skincer-in/assets/73764124/316ff40a-1b63-4b0e-8e8c-87d694690bef" alt="4" width="auto" height="300">
-<br>
-<br>
-<img src="https://github.com/alfiannnas/skincer-in/assets/87576161/1e01fbf5-d478-4576-84ff-23beac0b7bcd" alt="4" width="auto" height="300"> <br><br>
 
 
 
