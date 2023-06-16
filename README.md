@@ -25,7 +25,15 @@ Human Healthcare and Living Wellbeings
 ### Featured Technologies
 * [TensorFlow](https://www.tensorflow.org/)
 * [TensorFlow Lite](https://www.tensorflow.org/lite)
-  
+
+### Dataset
+Public Dataset
+* [Dataset 1](https://www.kaggle.com/datasets/riyaelizashaju/isic-skin-disease-image-dataset-labelled)
+* [Dataset 2](https://www.istockphoto.com/tr/search/search-by-asset?assetid=92125340&assettype=image)
+
+Final Dataset
+* [Final Dataset](https://www.kaggle.com/datasets/nicholasrogelio/capstone-skincer-in)
+
 ### Models Accuracy and Loss 
 1. Train and Val Accuracy (train > 98 and val > 92)<br>
 <img src="https://github.com/alfiannnas/skincer-in/assets/99014018/84ce337d-bc6f-4c16-b563-bd6d483a779a" alt="4" width="500" height="auto"> <br>
