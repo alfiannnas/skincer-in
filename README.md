@@ -72,7 +72,7 @@ Final Dataset
 2. Open editor and move to this folder register-login-api
 3. Activated Cloud SQL Admin API
 4. Create database in Cloud SQL
-5. npm install
+5. Run this command <i>npm install</i>
 6. Change the configuration in config.js, .env, app.yaml with new configuration
 7. Configure sequelize with this command <i>sequelize db:migrate</i>
 8. Deploy your app to App Engine with this command <i>gcloud init</i> after that <i>gcloud app deploy</i>
